@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var total = 1;
+        var input = prompt("Enter a number, or 0 to stop");
+        while (input != 1) {
+            total = total * Number(input);
+            input = prompt("Enter a number, or 0 to stop");
+        }
+        document.write("Total equals " + total);
+    </script>
+</body>
+
+</html>

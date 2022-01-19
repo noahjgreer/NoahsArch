@@ -1,0 +1,285 @@
+// At-ty Pattys
+@font-face {
+    src: url(../fonts/crete/CreteRound-Regular.ttf);
+    font: {
+        style: normal;
+        family: Crete;
+    }
+}
+
+@font-face {
+    src: url(../fonts/crete/CreteRound-Italic.ttf);
+    font: {
+        style: italic;
+        family: Crete;
+    }
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url(../fonts/poppins/Poppins-Regular.ttf);
+}
+
+@mixin headings {
+    margin: {
+        block: 0px;
+    }
+    font: {
+        family: Crete;
+        weight: regular;
+    }
+}
+
+@mixin inset-shadow {
+    box-shadow: 0px 0px 32px -16px #00000085 inset;
+    -webkit-box-shadow: 0px 0px 32px -16px #00000085 inset;
+    -moz-box-shadow: 0px 0px 32px -16px #00000085 inset;
+}
+
+@mixin shadow {
+    box-shadow: 0px 11px 43px -4px #0000003d;
+    -webkit-box-shadow: 0px 11px 43px -4px #0000003d;
+    -moz-box-shadow: 0px 11px 43px -4px #0000003d;
+}
+
+// Variables
+$primaryColor: #dc3e26;
+// CSS
+body {
+    margin: 0px;
+    overflow-x: hidden;
+}
+
+h1 {
+    @include headings;
+    font: {
+        size: 5rem;
+    }
+}
+
+h2 {
+    @include headings;
+    font: {
+        size: 3rem;
+    }
+}
+
+h3 {
+    @include headings;
+    text-align: center;
+    font: {
+        size: 3rem;
+    }
+}
+
+h4 {
+    @include headings;
+    text-align: center;
+    font: {
+        size: 2rem;
+    }
+}
+
+p {
+    font: {
+        family: Poppins;
+        size: 1.25rem;
+    }
+}
+
+section {
+    padding: {
+        inline: 12.5%;
+        block: 5rem;
+        top: 3rem;
+    }
+}
+
+.banner {
+    background-color: $primaryColor;
+    color: white;
+    padding: {
+        inline: 0px;
+        block: 10rem;
+    }
+    h1,
+    h2 {
+        padding-inline: 6.25%;
+    }
+    h2 {
+        font-style: italic;
+    }
+    h1 {
+        font-size: 7rem;
+    }
+}
+
+.separator {
+    width: 100%;
+}
+
+.skew {
+    transform: scaleY(-1);
+    margin-bottom: -10.5rem;
+    filter: invert(1);
+}
+
+.card {
+    @include inset-shadow();
+    padding-block: 5rem;
+    background-size: cover;
+    background-position: center;
+    card {
+        @include shadow;
+        display: flex;
+        background-color: white;
+        border-radius: 3rem;
+        padding: 5rem;
+        flex-wrap: wrap;
+        div {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            width: 50%;
+            flex: 1;
+        }
+        img {
+            flex: 1;
+            border-radius: 3rem;
+        }
+    }
+}
+
+gallery {
+    @include shadow;
+    display: flex;
+    padding: 3rem;
+    border-radius: 3rem;
+    margin-top: 3rem;
+    background-size: cover;
+    background-position: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    p {
+        text-align: center;
+        margin: 0px;
+        margin-bottom: 0.75rem;
+    }
+    >div {
+        padding: 1rem;
+        border-radius: 3rem;
+        margin: 1rem;
+        background-color: white;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        h4 {
+            margin-top: 0.75rem;
+        }
+    }
+    .tasks {
+        display: flex;
+        justify-content: center;
+        margin-block: 0.75rem;
+        img {
+            height: 2.25rem;
+            width: auto;
+            padding-inline: 0.25rem;
+        }
+        img[status="doing"] {
+            animation: doing 1s ease-in-out 0s infinite normal;
+        }
+        img[status="incomplete"] {
+            filter: invert(75%);
+        }
+    }
+}
+
+@keyframes doing {
+    0% {
+        filter: invert(75%);
+    }
+    50% {
+        filter: none;
+    }
+    100% {
+        filter: invert(75%);
+    }
+}
+
+a[type="button"],
+a[type="button unclickable"] {
+    font: {
+        family: Poppins;
+        size: 1.25rem;
+    }
+    background-color: $primaryColor;
+    text-align: center;
+    text-decoration-line: none;
+    color: white;
+    border-radius: 3rem;
+    padding: 1rem;
+    padding-inline: 20%;
+    margin-inline: auto;
+    margin-block: 1rem;
+    transition: all 0.2s ease;
+}
+
+a[type="button"]:hover {
+    filter: brightness(1.25);
+}
+
+label {
+    font: {
+        family: Poppins;
+    }
+}
+
+.progress-bar {
+    background-color: gray;
+    height: 2rem;
+    width: 100%;
+    border-radius: 3rem;
+    padding: 0.25rem;
+    margin-block: 0.75rem;
+}
+
+.progress-center {
+    background-color: skyblue;
+    height: 100%;
+    min-width: 2rem;
+    border-radius: 3rem;
+    margin-bottom: -1.9rem;
+    animation: progress 1s ease-in-out 0s infinite normal
+}
+
+@keyframes progress {
+    0% {
+        filter: none;
+    }
+    50% {
+        filter: brightness(1.5);
+    }
+    100% {
+        filter: none;
+    }
+}
+
+p[status="incomplete"] {
+    font-weight: bold;
+    color: red;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+p[status="doing"] {
+    font-weight: bold;
+    color: orange;
+    text-align: center;
+}
+
+p[status="complete"] {
+    font-weight: bold;
+    color: green;
+    text-align: center;
+}
