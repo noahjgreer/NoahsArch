@@ -24,6 +24,7 @@ h1 {
   margin-block: 0px;
   font-family: Crete;
   font-weight: regular;
+  text-align: center;
   font-size: 5rem;
 }
 
@@ -31,18 +32,11 @@ h2 {
   margin-block: 0px;
   font-family: Crete;
   font-weight: regular;
-  font-size: 3rem;
+  text-align: center;
+  font-size: 4rem;
 }
 
 h3 {
-  margin-block: 0px;
-  font-family: Crete;
-  font-weight: regular;
-  text-align: center;
-  font-size: 3rem;
-}
-
-h4 {
   margin-block: 0px;
   font-family: Crete;
   font-weight: regular;
@@ -59,6 +53,8 @@ section {
   padding-inline: 12.5%;
   padding-block: 5rem;
   padding-top: 3rem;
+  background-position: center;
+  background-size: cover;
 }
 
 .banner {
@@ -139,7 +135,7 @@ section {
   border-radius: 3rem;
 }
 
-gallery {
+gallery[type=placard] {
   box-shadow: 0px 11px 43px -4px #0000003d;
   -webkit-box-shadow: 0px 11px 43px -4px #0000003d;
   -moz-box-shadow: 0px 11px 43px -4px #0000003d;
@@ -156,15 +152,29 @@ gallery {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-gallery p {
+gallery[type=placard] p {
   text-align: center;
   margin: 0px;
   margin-bottom: 0.75rem;
 }
 
-gallery > div {
+gallery[type=placard] > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+gallery[type=placard] > div > div {
+  box-shadow: 0px 11px 43px -4px #0000003d;
+  -webkit-box-shadow: 0px 11px 43px -4px #0000003d;
+  -moz-box-shadow: 0px 11px 43px -4px #0000003d;
   padding: 1rem;
   border-radius: 3rem;
   margin: 1rem;
@@ -181,11 +191,11 @@ gallery > div {
           flex-direction: column;
 }
 
-gallery > div h4 {
+gallery[type=placard] > div > div h4 {
   margin-top: 0.75rem;
 }
 
-gallery .tasks {
+gallery[type=placard] .tasks {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -195,18 +205,18 @@ gallery .tasks {
   margin-block: 0.75rem;
 }
 
-gallery .tasks img {
+gallery[type=placard] .tasks img {
   height: 2.25rem;
   width: auto;
   padding-inline: 0.25rem;
 }
 
-gallery .tasks img[status="doing"] {
+gallery[type=placard] .tasks img[status="doing"] {
   -webkit-animation: doing 1s ease-in-out 0s infinite normal;
           animation: doing 1s ease-in-out 0s infinite normal;
 }
 
-gallery .tasks img[status="incomplete"] {
+gallery[type=placard] .tasks img[status="incomplete"] {
   -webkit-filter: invert(75%);
           filter: invert(75%);
 }
@@ -257,6 +267,7 @@ a[type="button unclickable"] {
   margin-block: 1rem;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
+  max-height: 2rem;
 }
 
 a[type="button"]:hover {
@@ -334,5 +345,179 @@ p[status="complete"] {
   font-weight: bold;
   color: green;
   text-align: center;
+}
+
+gallery[type=blank] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 3rem;
+  margin-top: 3rem;
+  background-size: cover;
+  background-position: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+gallery[type=blank] span {
+  opacity: 0%;
+}
+
+gallery[type=blank] p {
+  text-align: center;
+  margin: 0px;
+  margin-bottom: 0.75rem;
+}
+
+gallery[type=blank] > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+gallery[type=blank] > div > div:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+gallery[type=blank] > div > div:hover > span {
+  opacity: 100%;
+}
+
+gallery[type=blank] > div > div {
+  min-width: 37.5%;
+  max-width: 46.5%;
+  aspect-ratio: 1;
+  height: auto;
+  box-shadow: 0px 11px 43px -4px #0000003d;
+  -webkit-box-shadow: 0px 11px 43px -4px #0000003d;
+  -moz-box-shadow: 0px 11px 43px -4px #0000003d;
+  border-radius: 3rem;
+  margin: 1rem;
+  background-color: white;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-position: center;
+  background-size: cover;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+gallery[type=blank] > div > div > div {
+  height: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: auto;
+}
+
+gallery[type=blank] .tasks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-block: 0.75rem;
+}
+
+gallery[type=blank] .tasks img {
+  height: 2.25rem;
+  width: auto;
+  padding-inline: 0.25rem;
+}
+
+gallery[type=blank] .tasks img[status="doing"] {
+  -webkit-animation: doing 1s ease-in-out 0s infinite normal;
+          animation: doing 1s ease-in-out 0s infinite normal;
+}
+
+gallery[type=blank] .tasks img[status="incomplete"] {
+  -webkit-filter: invert(75%);
+          filter: invert(75%);
+}
+
+card {
+  box-shadow: 0px 11px 43px -4px #0000003d;
+  -webkit-box-shadow: 0px 11px 43px -4px #0000003d;
+  -moz-box-shadow: 0px 11px 43px -4px #0000003d;
+  display: block;
+  background-color: white;
+  border-radius: 3rem;
+  padding: 4rem;
+  margin-inline: -6.25%;
+  margin-block: 3rem;
+}
+
+card form:hover {
+  -webkit-filter: brightness(1.25);
+          filter: brightness(1.25);
+}
+
+card form {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+card h2 {
+  padding-bottom: 3rem;
+}
+
+div[type=trifold] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+div[type=trifold] > div {
+  min-width: 33%;
+  max-width: 33%;
+  border-inline: 2px #c2c2c2 solid;
+  padding-inline: 1rem;
+}
+
+socials {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+socials > img {
+  width: 4rem;
 }
 /*# sourceMappingURL=main.css.map */

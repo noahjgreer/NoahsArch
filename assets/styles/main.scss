@@ -28,6 +28,7 @@
         family: Crete;
         weight: regular;
     }
+    text-align: center;
 }
 
 @mixin inset-shadow {
@@ -60,21 +61,12 @@ h1 {
 h2 {
     @include headings;
     font: {
-        size: 3rem;
+        size: 4rem;
     }
 }
 
 h3 {
     @include headings;
-    text-align: center;
-    font: {
-        size: 3rem;
-    }
-}
-
-h4 {
-    @include headings;
-    text-align: center;
     font: {
         size: 2rem;
     }
@@ -92,6 +84,10 @@ section {
         inline: 12.5%;
         block: 5rem;
         top: 3rem;
+    }
+    background: {
+        position: center;
+        size: cover;
     }
 }
 
@@ -150,7 +146,7 @@ section {
     }
 }
 
-gallery {
+gallery[type=placard] {
     @include shadow;
     display: flex;
     padding: 3rem;
@@ -160,12 +156,18 @@ gallery {
     background-position: center;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     p {
         text-align: center;
         margin: 0px;
         margin-bottom: 0.75rem;
     }
     >div {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    >div>div {
+        @include shadow;
         padding: 1rem;
         border-radius: 3rem;
         margin: 1rem;
@@ -223,6 +225,7 @@ a[type="button unclickable"] {
     margin-inline: auto;
     margin-block: 1rem;
     transition: all 0.2s ease;
+    max-height: 2rem;
 }
 
 a[type="button"]:hover {
@@ -282,4 +285,113 @@ p[status="complete"] {
     font-weight: bold;
     color: green;
     text-align: center;
+}
+
+gallery[type=blank] {
+    display: flex;
+    border-radius: 3rem;
+    margin-top: 3rem;
+    background-size: cover;
+    background-position: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    span {
+        opacity: 0%;
+    }
+    p {
+        text-align: center;
+        margin: 0px;
+        margin-bottom: 0.75rem;
+    }
+    >div {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 100%;
+        >div:hover {
+            transform: scale(1.05);
+            >span {
+                opacity: 100%;
+            }
+        }
+    }
+    >div>div {
+        min-width: 37.5%;
+        max-width: 46.5%;
+        aspect-ratio: 1;
+        height: auto;
+        @include shadow;
+        border-radius: 3rem;
+        margin: 1rem;
+        background-color: white;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        background-position: center;
+        background-size: cover;
+        transition: all 0.5s ease;
+        >div {
+            height: 100%;
+            flex: 1;
+            width: auto;
+        }
+    }
+    .tasks {
+        display: flex;
+        justify-content: center;
+        margin-block: 0.75rem;
+        img {
+            height: 2.25rem;
+            width: auto;
+            padding-inline: 0.25rem;
+        }
+        img[status="doing"] {
+            animation: doing 1s ease-in-out 0s infinite normal;
+        }
+        img[status="incomplete"] {
+            filter: invert(75%);
+        }
+    }
+}
+
+card {
+    @include shadow;
+    display: block;
+    background-color: white;
+    border-radius: 3rem;
+    padding: 4rem;
+    margin-inline: -6.25%;
+    margin-block: 3rem;
+    form:hover {
+        filter: brightness(1.25);
+    }
+    form {
+        justify-content: center;
+        transition: all 0.5s ease;
+    }
+    h2 {
+        padding-bottom: 3rem;
+    }
+}
+
+div[type=trifold] {
+    display: flex;
+    justify-content: space-evenly;
+    >div {
+        min-width: 33%;
+        max-width: 33%;
+        border-inline: 2px rgb(194, 194, 194) solid;
+        padding-inline: 1rem;
+    }
+}
+
+socials {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    >img {
+        width: 4rem;
+    }
 }
