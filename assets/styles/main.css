@@ -520,4 +520,110 @@ socials {
 socials > img {
   width: 4rem;
 }
+
+tooltip {
+  -webkit-transition: all 2s ease 2s;
+  transition: all 2s ease 2s;
+  z-index: 100;
+  background-color: #252525;
+  position: absolute;
+  top: 6rem;
+  padding: 0.25rem;
+  border-radius: 3rem;
+}
+
+.refsheet {
+  box-shadow: 0px 11px 43px -4px #0000003d;
+  -webkit-box-shadow: 0px 11px 43px -4px #0000003d;
+  -moz-box-shadow: 0px 11px 43px -4px #0000003d;
+  border-radius: 3rem;
+  padding: 0;
+  margin-inline: 12.5%;
+  margin-block: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.refsheet > .holder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 70%;
+  border-bottom-left-radius: 3rem;
+}
+
+.refsheet > .holder > img {
+  box-shadow: 0px 0px 32px -16px #00000085 inset;
+  -webkit-box-shadow: 0px 0px 32px -16px #00000085 inset;
+  -moz-box-shadow: 0px 0px 32px -16px #00000085 inset;
+  border-top-left-radius: 3rem;
+}
+
+.refsheet > .holder > palette {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 3rem;
+  width: 100%;
+}
+
+.refsheet > .holder > palette .first {
+  border-bottom-left-radius: 3rem;
+}
+
+.refsheet > .holder > palette > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  min-height: 5rem;
+  font-family: -apple-system, BlinkMacSystemFont, Poppins, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  color: white;
+  -webkit-transition: all 0.25s ease-in-out 0.05s;
+  transition: all 0.25s ease-in-out 0.05s;
+}
+
+.refsheet > .holder > palette > div p {
+  visibility: hidden;
+  -webkit-transition: all 0.25s ease-in-out 0.05s;
+  transition: all 0.25s ease-in-out 0.05s;
+  margin-inline: -3rem;
+  color: transparent;
+}
+
+.refsheet > .holder > palette > div:hover {
+  padding-inline: 5%;
+}
+
+.refsheet > .holder > palette > div:hover p {
+  visibility: visible;
+  color: white;
+}
+
+.refsheet > .holder > palette .black:hover p {
+  color: black;
+}
+
+.refsheet > .holder > palette .first {
+  border-bottom-left-radius: 3rem;
+}
+
+.refsheet > .side {
+  width: 100%;
+  padding: 2rem;
+}
 /*# sourceMappingURL=main.css.map */

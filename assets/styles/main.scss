@@ -43,6 +43,10 @@
     -moz-box-shadow: 0px 11px 43px -4px #0000003d;
 }
 
+@mixin roundness {
+    border-radius: 3rem;
+}
+
 // Variables
 $primaryColor: #dc3e26;
 // CSS
@@ -393,5 +397,82 @@ socials {
     flex-wrap: wrap;
     >img {
         width: 4rem;
+    }
+}
+
+tooltip {
+    transition: all 2s ease 2s;
+    z-index: 100;
+    background-color: #252525;
+    position: absolute;
+    top: 6rem;
+    padding: 0.25rem;
+    @include roundness();
+}
+
+.refsheet {
+    @include shadow;
+    @include roundness;
+    padding: 0;
+    margin: {
+        inline: 12.5%;
+        block: 5rem;
+    }
+    display: flex;
+    >.holder {
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        border-bottom-left-radius: 3rem;
+        >img {
+            @include inset-shadow();
+            border-top-left-radius: 3rem;
+        }
+        >palette {
+            display: flex;
+            @include roundness();
+            width: 100%;
+            .first {
+                border-bottom-left-radius: 3rem;
+            }
+            >div {
+                p {
+                    visibility: hidden;
+                    transition: all 0.25s ease-in-out 0.05s;
+                    margin-inline: -3rem;
+                    color: transparent;
+                }
+                display: flex;
+                flex: 1;
+                min-height: 5rem;
+                font: {
+                    family: -apple-system, BlinkMacSystemFont, Poppins, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                }
+                text-align: center;
+                justify-content: center;
+                align-items: flex-end;
+                color: white;
+                transition: all 0.25s ease-in-out 0.05s;
+            }
+            >div:hover {
+                padding-inline: 5%;
+                p {
+                    visibility: visible;
+                    color: white;
+                }
+            }
+            .black:hover {
+                p {
+                    color: black
+                }
+            }
+            .first {
+                border-bottom-left-radius: 3rem;
+            }
+        }
+    }
+    >.side {
+        width: 100%;
+        padding: 2rem;
     }
 }

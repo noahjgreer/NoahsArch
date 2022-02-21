@@ -1,0 +1,21 @@
+{
+  "grammarly.overrides": [
+    {
+      "files": ["**/articles/2-2022/HomosexualRelationships.md"],
+      "config": {
+        "audience": "knowledgeable",
+        "dialect": "american",
+        "domain": "general",
+        "emotions": [
+          "confident",
+          "joyful",
+          "respectful",
+          "urgent",
+          "friendly",
+          "analytical"
+        ],
+        "goals": ["inform", "describe", "convince"]
+      }
+    }
+  ]
+}
