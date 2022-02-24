@@ -50,9 +50,13 @@
 // Variables
 $primaryColor: #dc3e26;
 // CSS
-body {
+body,
+html {
     margin: 0px;
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 h1 {
@@ -98,6 +102,7 @@ section {
 .banner {
     background-color: $primaryColor;
     color: white;
+    width: 100%;
     padding: {
         inline: 0px;
         block: 10rem;
@@ -230,6 +235,13 @@ a[type="button unclickable"] {
     margin-block: 1rem;
     transition: all 0.2s ease;
     max-height: 2rem;
+    user-select: none;
+}
+
+a[type="button"].alt {
+    background-color: white;
+    color: $primaryColor;
+    font-weight: bold;
 }
 
 a[type="button"]:hover {
@@ -301,6 +313,13 @@ gallery[type=blank] {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    .alert {
+        background-color: $primaryColor;
+        color: white;
+        h3 {
+            padding-block: 3rem;
+        }
+    }
     span {
         opacity: 0%;
     }
@@ -410,10 +429,47 @@ tooltip {
     @include roundness();
 }
 
+nav {
+    position: fixed;
+    background-color: white;
+    @include shadow();
+    border-bottom-left-radius: 3rem;
+    border-bottom-right-radius: 3rem;
+    display: flex;
+    width: 75%;
+    overflow: hidden;
+    max-height: 3.25rem;
+    padding: 0.35rem;
+    padding-inline: 6.25%;
+    align-items: center;
+    justify-content: space-between;
+    .right {
+        display: flex;
+        img {
+            width: 2.5rem;
+            padding-inline: 0.75rem;
+        }
+        p {
+            font-weight: bold;
+        }
+    }
+    .left {
+        display: flex;
+        p {
+            padding-inline: 0.5rem;
+        }
+        a {
+            text-decoration: none;
+            color: initial;
+        }
+    }
+}
+
 .refsheet {
     @include shadow;
     @include roundness;
     padding: 0;
+    max-width: 100%;
     margin: {
         inline: 12.5%;
         block: 5rem;
@@ -422,9 +478,10 @@ tooltip {
     >.holder {
         display: flex;
         flex-direction: column;
-        width: 70%;
+        max-width: 70%;
         border-bottom-left-radius: 3rem;
         >img {
+            max-width: 100%;
             @include inset-shadow();
             border-top-left-radius: 3rem;
         }
