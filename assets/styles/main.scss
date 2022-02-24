@@ -56,7 +56,7 @@ html {
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
 }
 
 h1 {
@@ -87,7 +87,9 @@ p {
     }
 }
 
-section {
+section,
+article {
+    width: 75%;
     padding: {
         inline: 12.5%;
         block: 5rem;
@@ -312,12 +314,12 @@ gallery[type=blank] {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-direction: row;
     .alert {
         background-color: $primaryColor;
         color: white;
         h3 {
-            padding-block: 3rem;
+            padding-block: 2.5rem;
         }
     }
     span {
@@ -328,21 +330,23 @@ gallery[type=blank] {
         margin: 0px;
         margin-bottom: 0.75rem;
     }
-    >div {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        width: 100%;
-        >div:hover {
-            transform: scale(1.05);
-            >span {
-                opacity: 100%;
-            }
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    .stretchy {
+        justify-content: space-between;
+    }
+    >div:hover {
+        transform: scale(1.05);
+        >span {
+            opacity: 100%;
         }
     }
-    >div>div {
-        min-width: 37.5%;
-        max-width: 46.5%;
+    >div {
+        padding: 3.125%;
+        min-width: 31.25%;
+        max-width: 40.25%;
         aspect-ratio: 1;
         height: auto;
         @include shadow;
@@ -355,6 +359,9 @@ gallery[type=blank] {
         background-position: center;
         background-size: cover;
         transition: all 0.5s ease;
+        h3 {
+            padding-block: 2.5rem;
+        }
         >div {
             height: 100%;
             flex: 1;
@@ -384,7 +391,8 @@ card {
     display: block;
     background-color: white;
     border-radius: 3rem;
-    padding: 4rem;
+    padding: 6.25%;
+    width: 100%;
     margin-inline: -6.25%;
     margin-block: 3rem;
     form:hover {
