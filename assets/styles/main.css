@@ -27,9 +27,9 @@ html {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
 }
 
 h1 {
@@ -61,7 +61,9 @@ p {
   font-size: 1.25rem;
 }
 
-section {
+section,
+article {
+  width: 75%;
   padding-inline: 12.5%;
   padding-block: 5rem;
   padding-top: 3rem;
@@ -386,10 +388,14 @@ gallery[type=blank] {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
 }
 
 gallery[type=blank] .alert {
@@ -398,7 +404,7 @@ gallery[type=blank] .alert {
 }
 
 gallery[type=blank] .alert h3 {
-  padding-block: 3rem;
+  padding-block: 2.5rem;
 }
 
 gallery[type=blank] span {
@@ -411,30 +417,25 @@ gallery[type=blank] p {
   margin-bottom: 0.75rem;
 }
 
-gallery[type=blank] > div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100%;
+gallery[type=blank] .stretchy {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-gallery[type=blank] > div > div:hover {
+gallery[type=blank] > div:hover {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
 }
 
-gallery[type=blank] > div > div:hover > span {
+gallery[type=blank] > div:hover > span {
   opacity: 100%;
 }
 
-gallery[type=blank] > div > div {
-  min-width: 37.5%;
-  max-width: 46.5%;
+gallery[type=blank] > div {
+  padding: 3.125%;
+  min-width: 31.25%;
+  max-width: 40.25%;
   aspect-ratio: 1;
   height: auto;
   box-shadow: 0px 11px 43px -4px #0000003d;
@@ -459,7 +460,11 @@ gallery[type=blank] > div > div {
   transition: all 0.5s ease;
 }
 
-gallery[type=blank] > div > div > div {
+gallery[type=blank] > div h3 {
+  padding-block: 2.5rem;
+}
+
+gallery[type=blank] > div > div {
   height: 100%;
   -webkit-box-flex: 1;
       -ms-flex: 1;
@@ -500,7 +505,8 @@ card {
   display: block;
   background-color: white;
   border-radius: 3rem;
-  padding: 4rem;
+  padding: 6.25%;
+  width: 100%;
   margin-inline: -6.25%;
   margin-block: 3rem;
 }
