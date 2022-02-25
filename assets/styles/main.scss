@@ -49,6 +49,7 @@
 
 // Variables
 $primaryColor: #dc3e26;
+$darkColor: #252525;
 // CSS
 body,
 html {
@@ -57,7 +58,7 @@ html {
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
 }
 
 h1 {
@@ -439,6 +440,7 @@ tooltip {
 }
 
 nav {
+    z-index: 9999;
     position: fixed;
     background-color: white;
     @include shadow();
@@ -540,5 +542,39 @@ nav {
     >.side {
         width: 100%;
         padding: 2rem;
+    }
+}
+
+footer {
+    display: flex;
+    padding-inline: 6.25%;
+    width: 87.5%;
+    background-color: $darkColor;
+    color: white;
+    .footer-logo {
+        width: 10rem;
+        padding: 3rem;
+    }
+    >div {
+        width: 100%;
+        padding: 3rem;
+        display: flex;
+        flex-direction: column;
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        >div {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            p {
+                margin: 0px;
+            }
+            a {
+                text-decoration: none;
+                color: white;
+            }
+        }
     }
 }

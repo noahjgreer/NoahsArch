@@ -27,9 +27,9 @@ html {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 h1 {
@@ -571,6 +571,7 @@ tooltip {
 }
 
 nav {
+  z-index: 9999;
   position: fixed;
   background-color: white;
   box-shadow: 0px 11px 43px -4px #0000003d;
@@ -719,5 +720,55 @@ nav .left a {
 .refsheet > .side {
   width: 100%;
   padding: 2rem;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-inline: 6.25%;
+  width: 87.5%;
+  background-color: #252525;
+  color: white;
+}
+
+footer .footer-logo {
+  width: 10rem;
+  padding: 3rem;
+}
+
+footer > div {
+  width: 100%;
+  padding: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+footer > div a {
+  text-decoration: none;
+  color: inherit;
+}
+
+footer > div > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  text-align: center;
+}
+
+footer > div > div p {
+  margin: 0px;
+}
+
+footer > div > div a {
+  text-decoration: none;
+  color: white;
 }
 /*# sourceMappingURL=main.css.map */
