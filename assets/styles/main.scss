@@ -134,7 +134,7 @@ article {
 
 .skew {
     transform: scaleY(-1);
-    margin-bottom: -10.5rem;
+    margin-bottom: -8.5rem;
     filter: invert(1);
 }
 
@@ -594,7 +594,7 @@ footer {
             @include headings();
             font-size: 1.75rem;
         }
-        padding-top: 37.5%;
+        padding-block: 35%;
     }
     p {
         @include text();

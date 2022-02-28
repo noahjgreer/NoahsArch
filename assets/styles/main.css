@@ -100,7 +100,7 @@ article {
 .skew {
   -webkit-transform: scaleY(-1);
           transform: scaleY(-1);
-  margin-bottom: -10.5rem;
+  margin-bottom: -8.5rem;
   -webkit-filter: invert(1);
           filter: invert(1);
 }
@@ -775,7 +775,7 @@ footer > div > div a {
 
 @media screen and (max-width: 400px) {
   .banner {
-    padding-top: 37.5%;
+    padding-block: 35%;
   }
   .banner h1 {
     margin-block: 0px;
