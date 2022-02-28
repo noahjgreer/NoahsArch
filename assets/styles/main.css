@@ -59,6 +59,7 @@ h3 {
 p {
   font-family: -apple-system, BlinkMacSystemFont, Poppins;
   font-size: 1.25rem;
+  word-wrap: break-word;
 }
 
 section,
@@ -770,5 +771,32 @@ footer > div > div p {
 footer > div > div a {
   text-decoration: none;
   color: white;
+}
+
+@media screen and (max-width: 400px) {
+  .banner {
+    padding-top: 37.5%;
+  }
+  .banner h1 {
+    margin-block: 0px;
+    font-family: -apple-system, BlinkMacSystemFont, Crete;
+    font-weight: regular;
+    text-align: center;
+    font-size: 3rem;
+  }
+  .banner h2 {
+    margin-block: 0px;
+    font-family: -apple-system, BlinkMacSystemFont, Crete;
+    font-weight: regular;
+    text-align: center;
+    font-size: 1.75rem;
+  }
+  p {
+    font-family: -apple-system, BlinkMacSystemFont, Poppins;
+    font-size: 1.25rem;
+    word-wrap: break-word;
+    word-break: break-word;
+    font-size: 1.15rem;
+  }
 }
 /*# sourceMappingURL=main.css.map */
