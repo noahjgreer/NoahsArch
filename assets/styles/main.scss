@@ -25,7 +25,7 @@
         block: 0px;
     }
     font: {
-        family: Crete;
+        family: -apple-system, BlinkMacSystemFont, Crete;
         weight: regular;
     }
     text-align: center;
@@ -33,7 +33,7 @@
 
 @mixin text {
     font: {
-        family: Poppins;
+        family: -apple-system, BlinkMacSystemFont, Poppins;
         size: 1.25rem;
     }
 }

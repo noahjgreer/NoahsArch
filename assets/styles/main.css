@@ -34,7 +34,7 @@ html {
 
 h1 {
   margin-block: 0px;
-  font-family: Crete;
+  font-family: -apple-system, BlinkMacSystemFont, Crete;
   font-weight: regular;
   text-align: center;
   font-size: 5rem;
@@ -42,7 +42,7 @@ h1 {
 
 h2 {
   margin-block: 0px;
-  font-family: Crete;
+  font-family: -apple-system, BlinkMacSystemFont, Crete;
   font-weight: regular;
   text-align: center;
   font-size: 4rem;
@@ -50,14 +50,14 @@ h2 {
 
 h3 {
   margin-block: 0px;
-  font-family: Crete;
+  font-family: -apple-system, BlinkMacSystemFont, Crete;
   font-weight: regular;
   text-align: center;
   font-size: 2rem;
 }
 
 p {
-  font-family: Poppins;
+  font-family: -apple-system, BlinkMacSystemFont, Poppins;
   font-size: 1.25rem;
 }
 
