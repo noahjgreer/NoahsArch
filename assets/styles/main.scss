@@ -108,6 +108,9 @@ article {
         position: center;
         size: cover;
     }
+    p {
+        text-indent: 12.5%;
+    }
 }
 
 .banner {
@@ -314,6 +317,25 @@ p[status="complete"] {
     text-align: center;
 }
 
+section.bi {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    >img {
+        padding-inline: 5%;
+        padding-block: 2.5%;
+        min-width: 7rem;
+        width: 30%;
+    }
+    >div {
+        padding-block: 2.5%;
+        padding-inline: 5%;
+        min-width: 7rem;
+        width: 50%;
+    }
+}
+
 gallery[type=blank] {
     display: flex;
     border-radius: 3rem;
@@ -393,6 +415,10 @@ gallery[type=blank] {
             filter: invert(75%);
         }
     }
+}
+
+.top {
+    padding-top: 7.5rem;
 }
 
 card {
@@ -592,6 +618,17 @@ footer {
 }
 
 @media screen and (max-width: 400px) {
+    section.bi {
+        flex-direction: column-reverse;
+        img {
+            width: 90%;
+            padding-inline: 0px;
+        }
+        div {
+            width: 100%;
+            padding-inline: 0px;
+        }
+    }
     .banner {
         h1 {
             @include headings();

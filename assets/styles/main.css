@@ -84,6 +84,11 @@ article {
   background-size: cover;
 }
 
+section p,
+article p {
+  text-indent: 12.5%;
+}
+
 .banner {
   background-color: #dc3e26;
   color: white;
@@ -385,6 +390,33 @@ p[status="complete"] {
   text-align: center;
 }
 
+section.bi {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section.bi > img {
+  padding-inline: 5%;
+  padding-block: 2.5%;
+  min-width: 7rem;
+  width: 30%;
+}
+
+section.bi > div {
+  padding-block: 2.5%;
+  padding-inline: 5%;
+  min-width: 7rem;
+  width: 50%;
+}
+
 gallery[type=blank] {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -509,6 +541,10 @@ gallery[type=blank] .tasks img[status="doing"] {
 gallery[type=blank] .tasks img[status="incomplete"] {
   -webkit-filter: invert(75%);
           filter: invert(75%);
+}
+
+.top {
+  padding-top: 7.5rem;
 }
 
 card {
@@ -794,6 +830,20 @@ footer > div > div a {
 }
 
 @media screen and (max-width: 400px) {
+  section.bi {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  section.bi img {
+    width: 90%;
+    padding-inline: 0px;
+  }
+  section.bi div {
+    width: 100%;
+    padding-inline: 0px;
+  }
   .banner {
     padding-block: 35%;
   }
