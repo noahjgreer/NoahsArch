@@ -29,6 +29,7 @@
         weight: regular;
     }
     text-align: center;
+    hyphens: auto;
 }
 
 @mixin text {
@@ -37,6 +38,7 @@
         size: 1.25rem;
     }
     word-wrap: break-word;
+    hyphens: auto;
 }
 
 @mixin inset-shadow {
@@ -461,6 +463,11 @@ nav {
     justify-content: space-between;
     .right {
         display: flex;
+        a {
+            display: flex;
+            text-decoration: none;
+            color: inherit;
+        }
         img {
             width: 2.5rem;
             padding-inline: 0.75rem;

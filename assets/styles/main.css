@@ -37,6 +37,9 @@ h1 {
   font-family: -apple-system, BlinkMacSystemFont, Crete;
   font-weight: regular;
   text-align: center;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
   font-size: 5rem;
 }
 
@@ -45,6 +48,9 @@ h2 {
   font-family: -apple-system, BlinkMacSystemFont, Crete;
   font-weight: regular;
   text-align: center;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
   font-size: 4rem;
 }
 
@@ -53,6 +59,9 @@ h3 {
   font-family: -apple-system, BlinkMacSystemFont, Crete;
   font-weight: regular;
   text-align: center;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
   font-size: 2rem;
 }
 
@@ -60,6 +69,9 @@ p {
   font-family: -apple-system, BlinkMacSystemFont, Poppins;
   font-size: 1.25rem;
   word-wrap: break-word;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
 }
 
 section,
@@ -602,6 +614,14 @@ nav .right {
   display: flex;
 }
 
+nav .right a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-decoration: none;
+  color: inherit;
+}
+
 nav .right img {
   width: 2.5rem;
   padding-inline: 0.75rem;
@@ -782,6 +802,9 @@ footer > div > div a {
     font-family: -apple-system, BlinkMacSystemFont, Crete;
     font-weight: regular;
     text-align: center;
+    -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+            hyphens: auto;
     font-size: 3rem;
   }
   .banner h2 {
@@ -789,12 +812,18 @@ footer > div > div a {
     font-family: -apple-system, BlinkMacSystemFont, Crete;
     font-weight: regular;
     text-align: center;
+    -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+            hyphens: auto;
     font-size: 1.75rem;
   }
   p {
     font-family: -apple-system, BlinkMacSystemFont, Poppins;
     font-size: 1.25rem;
     word-wrap: break-word;
+    -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+            hyphens: auto;
     word-break: break-word;
     font-size: 1.15rem;
   }
