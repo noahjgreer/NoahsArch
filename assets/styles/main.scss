@@ -355,7 +355,7 @@ gallery[type=blank] {
     background-position: center;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     flex-direction: row;
     .alert {
         background-color: $primaryColor;
@@ -375,7 +375,6 @@ gallery[type=blank] {
     }
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
     width: 100%;
     .stretchy {
         justify-content: space-between;
@@ -388,10 +387,9 @@ gallery[type=blank] {
     }*/
     >div {
         padding: 3.125%;
-        min-width: 31.25%;
-        max-width: 40.25%;
+        min-width: 15rem;
+        max-width: 25rem;
         aspect-ratio: 1;
-        height: auto;
         @include shadow;
         border-radius: 3rem;
         margin: 1rem;

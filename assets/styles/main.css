@@ -452,16 +452,15 @@ gallery[type=blank] {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   width: 100%;
   /*>div:hover {
         transform: scale(1.05);
@@ -499,10 +498,9 @@ gallery[type=blank] .stretchy {
 
 gallery[type=blank] > div {
   padding: 3.125%;
-  min-width: 31.25%;
-  max-width: 40.25%;
+  min-width: 15rem;
+  max-width: 25rem;
   aspect-ratio: 1;
-  height: auto;
   box-shadow: 0px 11px 43px -4px #0000003d;
   -webkit-box-shadow: 0px 11px 43px -4px #0000003d;
   -moz-box-shadow: 0px 11px 43px -4px #0000003d;
