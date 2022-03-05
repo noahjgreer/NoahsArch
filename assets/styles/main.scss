@@ -95,6 +95,16 @@ h3 {
     }
 }
 
+h6 {
+    // This is a caption!
+    @include text;
+    font-weight: normal;
+    color: gray;
+    font-size: 1rem;
+    margin: 0px;
+    text-align: center
+}
+
 p {
     @include text;
 }

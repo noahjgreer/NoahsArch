@@ -77,6 +77,20 @@ h3 {
   font-size: 2rem;
 }
 
+h6 {
+  font-family: -apple-system, BlinkMacSystemFont, Poppins;
+  font-size: 1.25rem;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  font-weight: normal;
+  color: gray;
+  font-size: 1rem;
+  margin: 0px;
+  text-align: center;
+}
+
 p {
   font-family: -apple-system, BlinkMacSystemFont, Poppins;
   font-size: 1.25rem;
