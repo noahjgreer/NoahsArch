@@ -896,6 +896,27 @@ table tr td {
           hyphens: auto;
 }
 
+blockquote {
+  font-family: -apple-system, BlinkMacSystemFont, Poppins;
+  font-size: 1.25rem;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  font-style: italic;
+  border-left: 0.25rem solid lightgray;
+  margin: 0px;
+  padding-inline: 5%;
+  padding-block: 2.5%;
+}
+
+blockquote h {
+  font-style: normal;
+
+blockquote h a {
+  color: inherit;
+}
+
 @media screen and (max-width: 400px) {
   section.bi {
     -webkit-box-orient: vertical;

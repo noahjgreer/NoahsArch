@@ -653,6 +653,21 @@ table {
     }
 }
 
+blockquote {
+    @include text;
+    font-style: italic;
+    border-left: 0.25rem solid lightgray;
+    margin: 0px;
+    padding-inline: 5%;
+    padding-block: 2.5%;
+    h {
+        font-style: normal;
+        a {
+            color: inherit;
+        }
+    }
+}
+
 @media screen and (max-width: 400px) {
     section.bi {
         flex-direction: column-reverse;
