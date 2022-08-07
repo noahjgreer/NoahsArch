@@ -34,6 +34,8 @@ h1, p, a {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  display: flex;
+  align-items: center;
   padding-block: 0.5rem;
   padding-inline: 2rem;
 }
@@ -46,6 +48,10 @@ h1, p, a {
 .button.alt {
   background-color: #FFFFFF;
   color: #DC3E26;
+}
+
+.button.locked {
+  cursor: not-allowed;
 }
 
 nav .navtext {
@@ -191,19 +197,74 @@ section > div {
   flex-wrap: wrap;
   align-items: stretch;
 }
+.tiles .intro {
+  flex-direction: column;
+  width: 50%;
+  margin-block: 2.5%;
+}
+.tiles .intro h1, .tiles .intro p, .tiles .intro a {
+  margin: 0.8333333333%;
+}
 .tiles .body div {
+  flex: content;
   border-radius: 3rem;
   padding: 2.125rem;
   background-color: #DC3E26;
   min-width: 10rem;
-  width: 35%;
   max-width: 20rem;
   margin: 2rem;
+  justify-content: space-between;
 }
 .tiles .body div .button {
   margin-block: 2.125rem;
 }
 .tiles .body div h1, .tiles .body div p {
+  color: #FFFFFF;
+}
+
+.button-holder {
+  flex-direction: row;
+  gap: 5%;
+  flex-wrap: wrap;
+}
+
+.gallery {
+  flex-direction: column;
+  align-items: center;
+}
+.gallery > div {
+  max-width: unset;
+  width: 100%;
+  padding: 0px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+.gallery .intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.gallery .body div {
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+  background-size: cover;
+  border-radius: 3rem;
+  padding: 2.125rem;
+  background-color: #DC3E26;
+  background-position: center;
+  min-width: 20rem;
+  max-width: 30rem;
+  min-height: 20rem;
+  max-height: 30rem;
+  margin: 2rem;
+  aspect-ratio: auto;
+}
+.gallery .body div .button {
+  margin-block: 2.125rem;
+}
+.gallery .body div h1, .gallery .body div p {
   color: #FFFFFF;
 }
 
@@ -223,8 +284,11 @@ footer .bottom {
 }
 footer .middle {
   display: flex;
-  flex-direction: row;
   justify-content: space-around;
+  flex-wrap: wrap;
+}
+footer .middle div {
+  min-width: 10rem;
 }
 footer .middle .logo {
   max-width: 15%;
@@ -249,10 +313,36 @@ div {
   align-items: center;
 }
 
+img.icon {
+  border-radius: 0px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+}
+
+section.accent {
+  background-color: #DC3E26;
+}
+
+section.tiles.accent .intro h1, section.tiles.accent .intro p {
+  color: #FFFFFF;
+}
+section.tiles.accent .body div {
+  background-color: #FFFFFF;
+}
+section.tiles.accent .body div h1, section.tiles.accent .body div p {
+  color: #2C2C2C;
+}
+
 @media screen and (max-width: 768px) {
   nav .side {
     width: 100%;
     padding: none;
+  }
+  footer .middle {
+    flex-direction: column-reverse;
   }
   .navtext {
     display: none;
@@ -265,6 +355,9 @@ div {
 @media screen and (min-width: 769px) {
   nav .side {
     padding-inline: 8.5rem;
+  }
+  footer .middle {
+    flex-direction: row;
   }
   .navtext {
     display: flex;

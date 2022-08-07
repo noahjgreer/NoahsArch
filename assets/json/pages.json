@@ -1,0 +1,24 @@
+{
+    "pages": [
+        {
+            "name": "Home",
+            "dst": "/"
+        },
+        {
+            "name": "Gallery",
+            "dst": "/gallery/"
+        },
+        {
+            "name": "Resources",
+            "dst": "/resources/"
+        },
+        {
+            "name": "Projects",
+            "dst": "/projects/"
+        },
+        {
+            "name": "Contact",
+            "dst": "/contact.html"
+        }
+    ]
+}
