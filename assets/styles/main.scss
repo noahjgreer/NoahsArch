@@ -1,699 +1,415 @@
-// At-ty Pattys
-@font-face {
-    src: url(../fonts/crete/CreteRound-Regular.ttf);
-    font: {
-        style: normal;
-        family: Crete;
-    }
-}
-
-@font-face {
-    src: url(../fonts/crete/CreteRound-Italic.ttf);
-    font: {
-        style: italic;
-        family: Crete;
-    }
-}
-
-@font-face {
-    font-family: Poppins;
-    src: url(../fonts/poppins/Poppins-Regular.ttf);
-}
-
-@mixin headings {
-    margin: {
-        block: 0px;
-    }
-    font: {
-        family: -apple-system, BlinkMacSystemFont, Crete;
-        weight: regular;
-    }
-    text-align: center;
-    hyphens: auto;
-}
-
-@mixin text {
-    font: {
-        family: -apple-system, BlinkMacSystemFont, Poppins;
-        size: 1.25rem;
-    }
-    word-wrap: break-word;
-    hyphens: auto;
-}
-
-@mixin inset-shadow {
-    box-shadow: 0px 0px 32px -16px #00000085 inset;
-    -webkit-box-shadow: 0px 0px 32px -16px #00000085 inset;
-    -moz-box-shadow: 0px 0px 32px -16px #00000085 inset;
-}
-
-@mixin shadow {
-    box-shadow: 0px 11px 43px -4px #0000003d;
-    -webkit-box-shadow: 0px 11px 43px -4px #0000003d;
-    -moz-box-shadow: 0px 11px 43px -4px #0000003d;
-}
-
-@mixin roundness {
-    border-radius: 3rem;
-}
-
 // Variables
-$primaryColor: #dc3e26;
-$darkColor: #252525;
-// CSS
-body,
-html {
-    width: 100%;
+/// System
+//// Elements
+$spacing-common: 2.5%;
+$inline-common: 15%;
+$padding-common: 8.5rem;
+$margin-common: 2rem;
+$radius: 3rem;
+//// Fonts
+$font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$text-blockmargin: 0.25rem;
+///// Heading
+$h1-fontsize: 2.25rem;
+///// Paragraph
+$p-fontsize: 1.375rem;
+///// Interactables
+@mixin i-fontinfo {
+    font-family: $font;
+    font-weight: 600;
+    font-size: 1.125rem;
+}
+/// Colors
+$main: #FFFFFF; 
+$secondary: #2C2C2C;
+$accent: #DC3E26;
+
+// Style
+/// System
+html, body {
     margin: 0px;
-    overflow-x: hidden;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
+/// Text
 h1 {
-    @include text;
-    @include headings;
-    font: {
-        size: 3rem;
-    }
+    font-weight: 600;
+    font-size: $h1-fontsize;
 }
 
-h2 {
-    @include text;
-    @include headings;
-    font: {
-        size: 2.5rem;
-    }
+p, a {
+    font-size: $p-fontsize;
 }
 
-h3 {
-    @include text;
-    @include headings;
-    font: {
-        size: 2rem;
-    }
+h1, p, a {
+    color: $secondary;
+    margin-block: $text-blockmargin;
+    font-family: $font;
+    margin-block: $spacing-common;
 }
 
-h6 {
-    // This is a caption!
-    @include text;
-    font-weight: normal;
-    color: gray;
-    font-size: 1rem;
-    margin: 0px;
-    text-align: center
-}
-
-p {
-    @include text;
-}
-
-section,
-article {
-    width: 75%;
-    padding: {
-        inline: 12.5%;
-        block: 5rem;
-        top: 3rem;
-    }
-    background: {
-        position: center;
-        size: cover;
-    }
-    p {
-        text-indent: 12.5%;
-    }
-}
-
-.banner {
-    background-color: $primaryColor;
-    color: white;
-    width: 100%;
-    padding: {
-        inline: 0px;
-        block: 6.25%;
-    }
-    h2 {
-        font-style: italic;
-    }
-    h1 {
-        font-size: 7rem;
-    }
-}
-
-.separator {
-    width: 100%;
-}
-
-.skew {
-    transform: scaleY(-1);
-    filter: invert(1);
-    height: 5rem;
-    margin-bottom: -5rem;
-}
-
-.card {
-    @include inset-shadow();
-    padding-block: 5rem;
-    background-size: cover;
-    background-position: center;
-    card {
-        @include shadow;
-        display: flex;
-        background-color: white;
-        border-radius: 3rem;
-        padding: 5rem;
-        flex-wrap: wrap;
-        div {
-            display: flex;
-            flex-direction: column;
-            flex-wrap: wrap;
-            width: 50%;
-            flex: 1;
-        }
-        img {
-            flex: 1;
-            border-radius: 3rem;
-        }
-    }
-}
-
-gallery[type=placard] {
-    @include shadow;
-    display: flex;
-    padding: 3rem;
-    border-radius: 3rem;
-    margin-top: 3rem;
-    background-size: cover;
-    background-position: center;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    p {
-        text-align: center;
-        margin: 0px;
-        margin-bottom: 0.75rem;
-        text-indent: 0%;
-    }
-    >div {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    >div>div {
-        @include shadow;
-        padding: 1rem;
-        border-radius: 3rem;
-        margin: 1rem;
-        background-color: white;
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        h4 {
-            margin-top: 0.75rem;
-        }
-    }
-    .tasks {
-        display: flex;
-        justify-content: center;
-        margin-block: 0.75rem;
-        img {
-            height: 2.25rem;
-            width: auto;
-            padding-inline: 0.25rem;
-        }
-        img[status="doing"] {
-            animation: doing 1s ease-in-out 0s infinite normal;
-        }
-        img[status="incomplete"] {
-            filter: invert(75%);
-        }
-    }
-}
-
-@keyframes doing {
-    0% {
-        filter: invert(75%);
-    }
-    50% {
-        filter: none;
-    }
-    100% {
-        filter: invert(75%);
-    }
-}
-
-a[type="button"],
-a[type="button unclickable"] {
-    font: {
-        family: Poppins;
-        size: 1.25rem;
-    }
-    background-color: $primaryColor;
-    text-align: center;
-    text-decoration-line: none;
-    color: white;
-    border-radius: 3rem;
-    padding: 1rem;
-    padding-inline: 20%;
-    margin-inline: auto;
-    margin-block: 1rem;
-    transition: all 0.2s ease;
-    max-height: 2rem;
+/// Interactables
+.button {
+    @include i-fontinfo();
+    text-decoration: none;
+    margin-block: $spacing-common;
+    border-radius: $radius;
     user-select: none;
-}
-
-a[type="button unclickable"] {
-    background-color: lightgray;
-}
-
-a[type="button"].alt {
-    background-color: white;
-    color: $primaryColor;
-    font-weight: bold;
-}
-
-a[type="button"]:hover {
-    filter: brightness(1.25);
-    transform: scale(1.05);
-}
-
-a[type="button"]:active {
-    filter: brightness(1.5);
-    transform: scale(.95);
-}
-
-label {
-    font: {
-        family: Poppins;
+    display: flex;
+    align-items: center;
+    padding: {
+        block: 0.5rem;
+        inline: 2rem;
     }
 }
 
-.progress-bar {
-    background-color: gray;
-    height: 2rem;
-    width: 100%;
-    border-radius: 3rem;
-    padding: 0.25rem;
-    margin-block: 0.75rem;
+.button.main {
+    background-color: $accent;
+    color: $main;
 }
 
-.progress-center {
-    background-color: skyblue;
-    height: 100%;
-    min-width: 2rem;
-    border-radius: 3rem;
-    margin-bottom: -1.9rem;
-    animation: progress 1s ease-in-out 0s infinite normal
+.button.alt {
+    background-color: $main;
+    color: $accent;
 }
 
-@keyframes progress {
-    0% {
-        filter: none;
+.button.locked {
+    cursor: not-allowed;
+}
+
+/// Elements
+nav {
+    .navtext {
+        max-height: 5rem;
+        justify-content: space-evenly;
+        align-items: center;
+        padding-inline: $inline-common;
+        flex-direction: row;
     }
-    50% {
-        filter: brightness(1.5);
+    .side {
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 98;
+        background-color: #ffffff8d;
+        backdrop-filter: blur(20px);
+        height: 100%;
+        transform: translateX(-100%);
+        transition: all 0.2s ease;
+        a {
+            line-height: 250%;
+        }
     }
-    100% {
-        filter: none;
+    .side.visible {
+        transform: translateX(0%);
+    }
+    .hamburger {
+        opacity: 0%;
+        border-radius: 0px;
+        z-index: 99;
+        aspect-ratio: 1/1;
+        width: 2rem;
+        position: fixed;
+        left: 0;
+        top: 0;
+        margin: $margin-common;
+        justify-content: space-between;
+        cursor: pointer;
+        transition: all 0.1s ease;
+        pointer-events: none;
+        div {
+            transition: all 0.2s ease;
+            border-radius: $radius;
+            width: 100%;
+            margin-block: $margin-common/8;
+            background-color: $secondary;
+            height: 10%;
+        }
+    }
+    .toggle {
+        .top {
+            transform: rotate(45deg) translate(15%, 345%);
+        }
+        .mid {
+            opacity: 0%;
+        }
+        .end {
+            transform: rotate(-45deg) translate(15%, -345%);
+        }
+    }
+    .hamburger.visible {
+        opacity: 100%;
+        pointer-events: all;
+    }
+    a {
+        text-decoration: none;
+        font-weight: normal;
     }
 }
 
-p[status="incomplete"] {
-    font-weight: bold;
-    color: red;
-    text-align: center;
-    margin-bottom: 0px;
-}
+section {
+    // background-color: rebeccapurple;
+    // outline: solid black;
 
-p[status="doing"] {
-    font-weight: bold;
-    color: orange;
-    text-align: center;
-}
-
-p[status="complete"] {
-    font-weight: bold;
-    color: green;
-    text-align: center;
-}
-
-section.bi {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    align-items: center;
-    >img {
-        padding-inline: 5%;
-        padding-block: 2.5%;
-        min-width: 7rem;
-        width: 30%;
-    }
-    >div {
-        padding-block: 2.5%;
-        padding-inline: 5%;
-        min-width: 7rem;
-        width: 50%;
+    padding: $padding-common;
+    padding-inline: $inline-common;
+    gap: 25%;
+    > div {
+        // background-color: orange;
+        padding-block: $spacing-common*2;
+        min-width: 10rem;
+        width: 35%;
+        max-width: 30rem;
     }
 }
 
-gallery[type=blank] {
-    display: flex;
-    border-radius: 3rem;
-    margin-top: 3rem;
-    background-size: cover;
-    background-position: center;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: stretch;
-    flex-direction: row;
-    .alert {
-        background-color: $primaryColor;
-        color: white;
-        h3 {
-            padding-block: 2.5rem;
-        }
-    }
-    span {
-        opacity: 0%;
-    }
-    p {
-        text-align: center;
-        margin: 0px;
-        margin-bottom: 0.75rem;
-        text-indent: 0%;
-    }
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    .stretchy {
-        justify-content: space-between;
-    }
-    /*>div:hover {
-        transform: scale(1.05);
-        >span {
-            opacity: 100%;
-        }
-    }*/
-    >div {
-        padding: 3.125%;
-        min-width: 15rem;
-        max-width: 25rem;
-        aspect-ratio: 1;
-        @include shadow;
-        border-radius: 3rem;
-        margin: 1rem;
-        background-color: white;
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        background-position: center;
-        background-size: cover;
-        transition: all 0.5s ease;
-        justify-content: space-between;
-        h3 {
-            padding-block: 2.5rem;
-        }
-        >div {
-            height: 100%;
-            flex: 1;
-            width: auto;
-        }
-    }
-    .tasks {
-        display: flex;
-        justify-content: center;
-        margin-block: 0.75rem;
-        img {
-            height: 2.25rem;
-            width: auto;
-            padding-inline: 0.25rem;
-        }
-        img[status="doing"] {
-            animation: doing 1s ease-in-out 0s infinite normal;
-        }
-        img[status="incomplete"] {
-            filter: invert(75%);
-        }
+#start {
+    padding-block: $inline-common*1.05;
+    >div>img {
+        width: 55%;
     }
 }
 
-.top {
-    padding-top: 7.5rem;
-}
-
-card {
-    @include shadow;
-    display: block;
-    background-color: white;
-    border-radius: 3rem;
-    padding: 6.25%;
-    width: 100%;
-    margin-inline: -6.25%;
-    margin-block: 3rem;
-    form:hover {
-        filter: brightness(1.25);
-    }
-    form {
-        justify-content: center;
-        transition: all 0.5s ease;
-    }
-    h2 {
-        padding-bottom: 3rem;
-    }
-}
-
-div[type=trifold] {
-    display: flex;
+.swipe {
+    background-color: $accent;
+    padding-block: $padding-common;
+    padding-inline: $inline-common/2;
+    gap: 15%;
     justify-content: space-evenly;
-    >div {
-        min-width: 33%;
-        max-width: 33%;
-        border-inline: 2px rgb(194, 194, 194) solid;
-        padding-inline: 1rem;
+    h1, p {
+        color: $main;
     }
-}
-
-socials {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    >img {
-        width: 4rem;
-    }
-}
-
-tooltip {
-    transition: all 2s ease 2s;
-    z-index: 100;
-    background-color: #252525;
-    position: absolute;
-    top: 6rem;
-    padding: 0.25rem;
-    @include roundness();
-}
-
-nav {
-    z-index: 9999;
-    position: fixed;
-    background-color: white;
-    @include shadow();
-    border-bottom-left-radius: 3rem;
-    border-bottom-right-radius: 3rem;
-    display: flex;
-    width: 75%;
-    overflow: hidden;
-    max-height: 3.25rem;
-    padding: 0.35rem;
-    padding-inline: 6.25%;
-    align-items: center;
-    justify-content: space-between;
-    .right {
-        display: flex;
-        a {
-            display: flex;
-            text-decoration: none;
-            color: inherit;
-        }
-        img {
-            width: 2.5rem;
-            padding-inline: 0.75rem;
-        }
-        p {
-            font-weight: bold;
-        }
-    }
-    .left {
-        display: flex;
-        p {
-            padding-inline: 0.5rem;
-        }
-        a {
-            text-decoration: none;
-            color: initial;
-        }
-    }
-}
-
-.refsheet {
-    @include shadow;
-    @include roundness;
-    padding: 0;
-    max-width: 100%;
-    margin: {
-        inline: 12.5%;
-        block: 5rem;
-    }
-    display: flex;
-    >.holder {
-        display: flex;
-        flex-direction: column;
-        max-width: 70%;
-        border-bottom-left-radius: 3rem;
-        >img {
-            max-width: 100%;
-            @include inset-shadow();
-            border-top-left-radius: 3rem;
-        }
-        >palette {
-            display: flex;
-            @include roundness();
-            width: 100%;
-            .first {
-                border-bottom-left-radius: 3rem;
-            }
-            >div {
-                p {
-                    visibility: hidden;
-                    transition: all 0.25s ease-in-out 0.05s;
-                    margin-inline: -3rem;
-                    color: transparent;
-                }
-                display: flex;
-                flex: 1;
-                min-height: 5rem;
-                font: {
-                    family: -apple-system, BlinkMacSystemFont, Poppins, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-                }
-                text-align: center;
-                justify-content: center;
-                align-items: flex-end;
-                color: white;
-                transition: all 0.25s ease-in-out 0.05s;
-            }
-            >div:hover {
-                padding-inline: 5%;
-                p {
-                    visibility: visible;
-                    color: white;
-                }
-            }
-            .black:hover {
-                p {
-                    color: black
-                }
-            }
-            .first {
-                border-bottom-left-radius: 3rem;
-            }
-        }
-    }
-    >.side {
+    >.separator.top {
+        border-radius: 0px;
+        margin-top: $padding-common*-1;
+        position: absolute;
+        left: 0;
         width: 100%;
-        padding: 2rem;
+        overflow: hidden;
+        line-height: 0;
+        height: 81px;
+        transform: rotateY(180deg);
+        filter: invert(1);
+        user-select: none;
+        pointer-events: none;
+    }
+    >.separator.bottom {
+        filter: invert(1);
+        border-radius: 0px;
+        transform: scaleY(-1) scale(1.25);
+        width: 100%;
+        height: 81px;
+        line-height: 0;
+        margin-bottom: $padding-common*-1;
+        margin-top: $padding-common*0.35;
+        user-select: none;
+        pointer-events: none;
+    }
+}
+
+.tiles {
+    flex-direction: column;
+    align-items: center;
+    >div {
+        max-width: unset;
+        width: 100%;
+        padding: 0px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: stretch;
+    }
+    .intro {
+        flex-direction: column;
+        width: 50%;
+        margin-block: $spacing-common;
+        h1, p, a {
+            margin: $spacing-common/3;
+        }
+    }
+    .body {
+        div {
+            flex: content;
+            border-radius: $radius;
+            padding: $padding-common/4;
+            background-color: $accent;
+            min-width: 10rem;
+            // width: 35%;
+            max-width: 20rem;
+            margin: $margin-common;
+            justify-content: space-between;
+            .button {
+                margin-block: $padding-common/4;
+            }
+            h1, p {
+                color: $main;
+            }
+        }
+    }
+}
+
+.button-holder {
+    flex-direction: row;
+    gap: 5%;
+    flex-wrap: wrap;
+}
+
+.gallery {
+    flex-direction: column;
+    align-items: center;
+    >div {
+        max-width: unset;
+        width: 100%;
+        padding: 0px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: stretch;
+    }
+    .intro {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .body {
+        div {
+            // flex: content;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: flex-end;
+            background-size: cover;
+            border-radius: $radius;
+            padding: $padding-common/4;
+            background-color: $accent;
+            background-position: center;
+            min-width: 20rem;
+            max-width: 30rem;
+            min-height: 20rem;
+            max-height: 30rem;
+            margin: $margin-common;
+            aspect-ratio: auto;
+            .button {
+                margin-block: $padding-common/4;
+            }
+            h1, p {
+                color: $main;
+            }
+        }
     }
 }
 
 footer {
-    display: flex;
-    padding-inline: 6.25%;
-    width: 87.5%;
-    background-color: $darkColor;
-    color: white;
-    .footer-logo {
-        width: 10rem;
-        padding: 3rem;
+    background-color: $secondary;
+    padding: $margin-common;
+    padding-inline: $inline-common;
+    h1, p, a {
+        color: $main;
     }
-    >div {
-        width: 100%;
-        padding: 3rem;
+    div {
+        margin-block: $margin-common;
+    }
+    .bottom {
+        margin-bottom: 0px;
+    }
+    .middle {
         display: flex;
-        flex-direction: column;
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-        >div {
-            display: flex;
-            justify-content: space-around;
-            text-align: center;
-            p {
-                margin: 0px;
-            }
-            a {
-                text-decoration: none;
-                color: white;
-            }
-        }
-    }
-}
-
-table {
-    tr {
-        display: flex;
-        th {
-            flex: 1;
-            @include headings;
-            font-size: 1.5rem;
-        }
-        td {
-            flex: 1;
-            @include text;
-        }
-    }
-}
-
-blockquote {
-    @include text;
-    font-style: italic;
-    border-left: 0.25rem solid lightgray;
-    margin: 0px;
-    padding-inline: 5%;
-    padding-block: 2.5%;
-    h {
-        font-style: normal;
-        a {
-            color: inherit;
-        }
-    }
-}
-
-@media screen and (max-width: 400px) {
-    section.bi {
-        flex-direction: column-reverse;
-        img {
-            width: 90%;
-            padding-inline: 0px;
-        }
+        justify-content: space-around;
+        flex-wrap: wrap;
         div {
-            width: 100%;
-            padding-inline: 0px;
+            min-width: 10rem;
+        }
+        .logo {
+            max-width: 15%;
+        }
+        .navigation {
+            a {
+                padding-block: $text-blockmargin*3;
+                text-decoration: none;
+                font-weight: 600;
+            }
         }
     }
-    .banner {
-        h1 {
-            @include headings();
-            font-size: 3rem;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    border-radius: $radius;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+img.icon {
+    border-radius: 0px;
+    user-select: none;
+    pointer-events: none;
+}
+
+section.accent {
+    background-color: $accent;
+}
+
+section.tiles.accent {
+    .intro {
+        h1, p {
+            color: $main;
         }
-        h2 {
-            @include headings();
-            font-size: 1.75rem;
-        }
-        padding-block: 35%;
     }
-    p {
-        @include text();
-        word-break: break-word;
-        font-size: 1.15rem;
+    .body {
+        div {
+            h1, p {
+                color: $secondary;
+            }
+            background-color: $main;
+        }
+    }
+}
+
+// Screens
+@media screen and (max-width: 768px) {
+    nav .side {
+        width: 100%;
+        padding: none;
+    }
+
+    footer .middle {
+        flex-direction: column-reverse;
+    }
+
+    .navtext {
+        display: none;
+        visibility: hidden;
+    }
+
+    section {
+        div {
+            width: unset;
+        }
+    }
+}
+
+@media screen and (min-width: 769px) {
+    nav .side {
+        padding-inline: $padding-common;
+    }
+
+    footer .middle {
+        flex-direction: row;
+    }
+
+    .navtext {
+        display: flex;
+        visibility: visible;
     }
 }
