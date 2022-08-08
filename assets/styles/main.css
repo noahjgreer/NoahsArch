@@ -12,11 +12,11 @@ h1 {
   font-size: 2.25rem;
 }
 
-p, a {
+p, a, li {
   font-size: 1.375rem;
 }
 
-h1, p, a {
+h1, p, a, li {
   color: #2C2C2C;
   margin-block: 0.25rem;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -202,7 +202,7 @@ section > div {
   width: 50%;
   margin-block: 2.5%;
 }
-.tiles .intro h1, .tiles .intro p, .tiles .intro a {
+.tiles .intro h1, .tiles .intro p, .tiles .intro a, .tiles .intro li {
   margin: 0.8333333333%;
 }
 .tiles .body div {
@@ -218,8 +218,27 @@ section > div {
 .tiles .body div .button {
   margin-block: 2.125rem;
 }
-.tiles .body div h1, .tiles .body div p {
+.tiles .body div h1, .tiles .body div p, .tiles .body div li {
   color: #FFFFFF;
+}
+.tiles .body .dev-checklist {
+  padding: 0;
+  margin: 0;
+  margin-block: 2.125rem;
+}
+.tiles .body .dev-checklist div {
+  display: flex;
+  flex-direction: row;
+  padding: 2.5%;
+  margin: 0;
+  justify-content: flex-start;
+}
+.tiles .body .dev-checklist div p {
+  text-align: left;
+}
+.tiles .body .dev-checklist .checkbox {
+  width: 10%;
+  padding-inline: 2.5%;
 }
 
 .button-holder {
@@ -299,10 +318,37 @@ footer .middle .navigation a {
   font-weight: 600;
 }
 
+.socials {
+  display: flex;
+  flex-direction: row;
+  margin-inline: 15%;
+  padding: 0;
+}
+.socials a {
+  max-width: 20%;
+  display: flex;
+  margin-inline: 2.5%;
+  justify-content: center;
+}
+.socials img {
+  margin: 2.5%;
+  min-width: 100%;
+  max-width: 20%;
+  filter: invert(17%) sepia(0%) saturate(1259%) hue-rotate(275deg) brightness(105%) contrast(102%);
+}
+.socials svg > circle {
+  fill: #FFFFFF;
+}
+
 img {
   width: 100%;
   height: auto;
   border-radius: 3rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
 }
 
 div {
