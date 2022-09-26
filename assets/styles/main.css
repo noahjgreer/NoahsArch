@@ -279,27 +279,49 @@ section > div {
   flex-direction: column;
   align-items: center;
 }
-.gallery .body div {
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-end;
-  background-size: cover;
-  border-radius: 3rem;
-  padding: 2.125rem;
-  background-color: #DC3E26;
-  background-position: center;
-  min-width: 20rem;
-  max-width: 30rem;
-  min-height: 20rem;
-  max-height: 30rem;
+.gallery .body {
+  /**
+  div {
+      // flex: content;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: flex-end;
+      background-size: cover;
+      border-radius: $radius;
+      padding: $padding-common/4;
+      background-color: $accent;
+      background-position: center;
+      min-width: 20rem;
+      max-width: 30rem;
+      min-height: 20rem;
+      max-height: 30rem;
+      margin: $margin-common;
+      aspect-ratio: auto;
+      .button {
+          margin-block: $padding-common/4;
+      }
+      h1, p {
+          color: $main;
+      }
+  }**/
+}
+.gallery .body > div {
+  min-width: 15rem;
+  max-width: 25rem;
+  padding: 2rem;
+  flex-direction: column;
+}
+.gallery .body > div > div {
+  justify-content: end;
+  align-items: flex-start;
+  width: 100%;
+}
+.gallery .body > div > div p {
+  position: absolute;
+  color: white;
+  text-shadow: 0 0 20px #000;
   margin: 2rem;
-  aspect-ratio: auto;
-}
-.gallery .body div .button {
-  margin-block: 2.125rem;
-}
-.gallery .body div h1, .gallery .body div p {
-  color: #FFFFFF;
+  text-align: left;
 }
 
 footer {
@@ -336,7 +358,6 @@ footer .middle .navigation a {
 .socials {
   display: flex;
   flex-direction: row;
-  margin-inline: 15%;
   padding: 0;
 }
 .socials a {
@@ -353,6 +374,11 @@ footer .middle .navigation a {
 }
 .socials svg > circle {
   fill: #FFFFFF;
+}
+
+#socials {
+  flex-direction: column;
+  align-items: center;
 }
 
 img {
