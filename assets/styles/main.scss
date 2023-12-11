@@ -11,6 +11,8 @@ $font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Tahoma, Geneva,
 $text-blockmargin: 0.25rem;
 ///// Heading
 $h1-fontsize: 2.25rem;
+$h2-fontsize: 1.75rem;
+$subtitle-fontsize: 1.5rem;
 ///// Paragraph
 $p-fontsize: 1.375rem;
 ///// Interactables
@@ -56,11 +58,23 @@ h1 {
     font-size: $h1-fontsize;
 }
 
+h2 {
+    font-weight: 600;
+    font-size: $h2-fontsize;
+}
+
+h2.subtitle {
+    font-weight: 400;
+    font-style: italic;
+    font-size: $subtitle-fontsize;
+    margin: 0px;
+}
+
 p, a, li {
     font-size: $p-fontsize;
 }
 
-h1, p, a, li {
+h1, h2, p, a, li {
     color: $secondary;
     margin-block: $text-blockmargin;
     font-family: $font;
@@ -93,6 +107,7 @@ h1, p, a, li {
 }
 
 .button.locked {
+    pointer-events: none;
     cursor: not-allowed;
 }
 
@@ -185,6 +200,21 @@ section {
     }
 }
 
+.article {
+    flex-direction: column;
+    h1, h2 {
+        text-align: center;
+        margin: 0px;
+        margin-bottom: 1rem;
+    }
+    p {
+        margin-block: 0.5rem;
+        line-height: 2rem;
+        // Put an indentation before each paragraph
+        text-indent: 5rem;
+    }
+}
+
 #start {
     padding-block: $inline-common*1.05;
     >div>img {
@@ -250,6 +280,7 @@ section {
     }
     .body {
         div {
+            display: flex;
             flex: content;
             border-radius: $radius;
             padding: $padding-common/4;
@@ -259,6 +290,8 @@ section {
             max-width: 20rem;
             margin: $margin-common;
             justify-content: space-between;
+            background-position: center;
+            background-size: cover;
             .button {
                 margin-block: $padding-common/4;
             }
