@@ -236,6 +236,9 @@ section > div {
   flex-wrap: wrap;
   align-items: stretch;
 }
+.tiles.unstrict > div {
+  align-items: center !important;
+}
 .tiles .intro {
   flex-direction: column;
   width: 50%;

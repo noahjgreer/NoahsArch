@@ -270,6 +270,11 @@ section {
         flex-wrap: wrap;
         align-items: stretch;
     }
+    &.unstrict {
+        >div {
+            align-items: center !important;
+        }
+    }
     .intro {
         flex-direction: column;
         width: 50%;
@@ -286,6 +291,7 @@ section {
             padding: $padding-common/4;
             background-color: $accent;
             min-width: 10rem;
+            // flex: 1;
             // width: 35%;
             max-width: 20rem;
             margin: $margin-common;
