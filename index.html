@@ -75,19 +75,20 @@
         <img src="/assets/images/elements/swipe.svg" class="separator top">    
         <div>
             <h1>About Me</h1>
-            <p>My name is Noah Greer, and I am a
+            <p> 
+                My name is Noah Greer, and I am a
                 15 year old with a passion for creating.
-               I like to draw, create websites, make videos,
-               code, along with a slew of other hobbies
-               that involve creativity. I also have an extreme
-               love for foxes and other furry things.
-               In my spare time, I enjoy diving into God's
-               Word and dissecting and studying the
-               Bible while growing closer to Him.
-               My goal in creating Noah's Arch is to 
-               bring together all of my creations into an 
-               archive where they can be organized 
-               and kept safe forever.
+                I like to draw, create websites, make videos,
+                code, along with a slew of other hobbies
+                that involve creativity. I also have an extreme
+                love for foxes and other furry things.
+                In my spare time, I enjoy diving into God's
+                Word and dissecting and studying the
+                Bible while growing closer to Him.
+                My goal in creating Noah's Arch is to 
+                bring together all of my creations into an 
+                archive where they can be organized 
+                and kept safe forever.
             </p>
         </div>
         <div>
@@ -144,5 +145,14 @@
 </body>
 
 <script src="/assets/js/navigation.js"></script>
+<script>
+    // Update age based on time. 
+    let aboutSection = document.querySelector("#about > div > p");
+    let today = Date.now();
+    let birthday = new Date("2007-07-13");
+    let age = today - birthday;
+    age = Math.floor(age / 31556952000);
+    aboutSection.innerHTML = aboutSection.innerHTML.replace("15", age);
+</script>
 
 </html>

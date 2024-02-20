@@ -18,7 +18,7 @@ html, body {
 
 ::-webkit-scrollbar-thumb {
   background-color: #2C2C2C;
-  border-radius: 3rem;
+  border-radius: 1.5rem;
   border: white 0.25rem solid;
 }
 
@@ -56,7 +56,7 @@ h1, h2, p, a, li {
   font-size: 1.125rem;
   text-decoration: none;
   margin-block: 2.5%;
-  border-radius: 3rem;
+  border-radius: 10rem;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -123,7 +123,7 @@ nav .hamburger {
 }
 nav .hamburger div {
   transition: all 0.2s ease;
-  border-radius: 3rem;
+  border-radius: 10rem;
   width: 100%;
   margin-block: 0.25rem;
   background-color: #2C2C2C;
@@ -250,7 +250,7 @@ section > div {
 .tiles .body div {
   display: flex;
   flex: content;
-  border-radius: 3rem;
+  border-radius: 1.5rem;
   padding: 2.125rem;
   background-color: #DC3E26;
   min-width: 10rem;
@@ -414,7 +414,7 @@ footer .middle .navigation a {
 img {
   width: 100%;
   height: auto;
-  border-radius: 3rem;
+  border-radius: 1.5rem;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
