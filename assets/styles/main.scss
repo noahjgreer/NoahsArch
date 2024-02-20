@@ -189,6 +189,8 @@ section {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    min-height: 100vh;
+    box-sizing: border-box;
     padding: $padding-common;
     padding-inline: $inline-common;
     gap: 25%;
@@ -223,40 +225,42 @@ section {
     }
 }
 
+.separator {
+    border-radius: 0px;
+    filter: invert(1);
+    transform: scaleY(-1) scale(1.25);
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+
+    h1, p {
+        color: $main;
+    }
+    &.top {
+        transform: rotateY(180deg);
+        filter: invert(1);
+        user-select: none;
+        pointer-events: none;
+        top: 0;
+    }
+    &.bottom {
+        filter: invert(1);
+        transform: scaleY(-1) scale(1.25);
+        position: absolute;
+        bottom: 0;
+    }
+}
+
 .swipe {
     background-color: $accent;
     padding-block: $padding-common;
     padding-inline: $inline-common/2;
     gap: 15%;
     justify-content: space-evenly;
+    position: relative;
+    width: 100%;
     h1, p {
         color: $main;
-    }
-    >.separator.top {
-        border-radius: 0px;
-        margin-top: $padding-common*-1;
-        position: absolute;
-        left: 0;
-        width: 100%;
-        overflow: hidden;
-        line-height: 0;
-        height: 81px;
-        transform: rotateY(180deg);
-        filter: invert(1);
-        user-select: none;
-        pointer-events: none;
-    }
-    >.separator.bottom {
-        filter: invert(1);
-        border-radius: 0px;
-        transform: scaleY(-1) scale(1.25);
-        width: 100%;
-        height: 81px;
-        line-height: 0;
-        margin-bottom: $padding-common*-1;
-        margin-top: $padding-common*0.35;
-        user-select: none;
-        pointer-events: none;
     }
 }
 

@@ -151,6 +151,8 @@ section {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  min-height: 100vh;
+  box-sizing: border-box;
   padding: 8.5rem;
   padding-inline: 15%;
   gap: 25%;
@@ -183,45 +185,44 @@ section > div {
   width: 55%;
 }
 
-.swipe {
-  background-color: #DC3E26;
-  padding-block: 8.5rem;
-  padding-inline: 7.5%;
-  gap: 15%;
-  justify-content: space-evenly;
-}
-.swipe h1, .swipe p {
-  color: #FFFFFF;
-}
-.swipe > .separator.top {
+.separator {
   border-radius: 0px;
-  margin-top: -8.5rem;
+  filter: invert(1);
+  transform: scaleY(-1) scale(1.25);
   position: absolute;
-  left: 0;
   width: 100%;
   overflow: hidden;
-  line-height: 0;
-  height: 81px;
+}
+.separator h1, .separator p {
+  color: #FFFFFF;
+}
+.separator.top {
   transform: rotateY(180deg);
   filter: invert(1);
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
   pointer-events: none;
+  top: 0;
 }
-.swipe > .separator.bottom {
+.separator.bottom {
   filter: invert(1);
-  border-radius: 0px;
   transform: scaleY(-1) scale(1.25);
+  position: absolute;
+  bottom: 0;
+}
+
+.swipe {
+  background-color: #DC3E26;
+  padding-block: 8.5rem;
+  padding-inline: 7.5%;
+  gap: 15%;
+  justify-content: space-evenly;
+  position: relative;
   width: 100%;
-  height: 81px;
-  line-height: 0;
-  margin-bottom: -8.5rem;
-  margin-top: 2.975rem;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-  pointer-events: none;
+}
+.swipe h1, .swipe p {
+  color: #FFFFFF;
 }
 
 .tiles {
