@@ -1,19 +1,23 @@
 // Variables
 /// System
 //// Elements
-$spacing-common: 2.5%;
+$inline-spacing-common: 2.5%;
 $inline-common: 25%;
-$padding-common: 8.5rem;
+$block-common: 8.5rem;
+$block-font: 0.25rem;
+$heading-block: $block-font*3;
+$button-margin-common: $block-font*4;
+$tile-padding: $block-common/6 $inline-common/6;
+$block-nav: $block-font*3;
 $margin-common: 2rem;
 $radius: 1.5rem;
 $radius-round: 10rem;
+$tile-margin: $margin-common $inline-spacing-common;
 //// Fonts
 $font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-$text-blockmargin: 0.25rem;
 ///// Heading
 $h1-fontsize: 1.65rem;
-$h2-fontsize: 1.25rem;
-$h3-fontsize: 1.15rem;
+$h2-fontsize: 1.45rem;
 $subtitle-fontsize: 1.2rem;
 ///// Paragraph
 $p-fontsize: 1rem;
@@ -21,7 +25,7 @@ $p-fontsize: 1rem;
 @mixin i-fontinfo {
     font-family: $font;
     font-weight: 600;
-    font-size: 1.125rem;
+    font-size: $p-fontsize;
 }
 /// Colors
 $main: #FFFFFF; 
@@ -65,11 +69,6 @@ h2 {
     font-size: $h2-fontsize;
 }
 
-h3 {
-    font-weight: 600;
-    font-size: $h3-fontsize;
-}
-
 h2.subtitle {
     font-weight: 400;
     font-style: italic;
@@ -79,20 +78,25 @@ h2.subtitle {
 
 p, a, li {
     font-size: $p-fontsize;
+    line-height: 1.5rem;
 }
 
 h1, h2, h3, p, a, li {
     color: $secondary;
-    margin-block: $text-blockmargin;
     font-family: $font;
-    margin-block: $spacing-common;
+    margin-block: $block-font;
+}
+
+h1, h2, h3 {
+    margin-top: $heading-block;
 }
 
 /// Interactables
 .button {
     @include i-fontinfo();
     text-decoration: none;
-    margin-block: $spacing-common;
+    // margin-block: $block-common;
+    margin: $button-margin-common;
     border-radius: $radius-round;
     user-select: none;
     display: flex;
@@ -125,6 +129,7 @@ nav {
         justify-content: space-evenly;
         align-items: center;
         padding-inline: $inline-common;
+        margin-block: $block-nav;
         flex-direction: row;
     }
     .side {
@@ -197,12 +202,12 @@ section {
     flex-wrap: wrap;
     min-height: 100vh;
     box-sizing: border-box;
-    padding: $padding-common;
+    padding-block: $block-common;
     padding-inline: $inline-common;
     gap: 25%;
     > div {
         // background-color: orange;
-        padding-block: $spacing-common*2;
+        padding-block: $inline-spacing-common*2;
         min-width: 10rem;
         width: 35%;
         max-width: 30rem;
@@ -211,25 +216,21 @@ section {
 
 .article {
     flex-direction: column;
-    h1, h2.subtitle, h3 {
+    h1, h2.subtitle {
         text-align: center;
         margin: 0px;
         margin-bottom: 1rem;
     }
-    h2 {
-        text-align: left;
-        margin-bottom: 0.25rem;
-    }
     p {
-        margin-top: 0.5rem;
-        line-height: 1.75rem;
+        margin-bottom: $heading-block;
+        line-height: 2rem;
         // Put an indentation before each paragraph
         // text-indent: 5rem;
     }
 }
 
 #start {
-    padding-block: $inline-common*1.05;
+    max-height: 100vh;
     >div>img {
         width: 55%;
     }
@@ -263,7 +264,7 @@ section {
 
 .swipe {
     background-color: $accent;
-    padding-block: $padding-common;
+    padding-block: $block-common;
     padding-inline: $inline-common/2;
     gap: 15%;
     justify-content: space-evenly;
@@ -293,9 +294,9 @@ section {
     .intro {
         flex-direction: column;
         width: 50%;
-        margin-block: $spacing-common;
+        margin-block: $inline-spacing-common;
         h1, p, a, li {
-            margin: $spacing-common/3;
+            margin: $inline-spacing-common/3;
         }
     }
     .body {
@@ -303,18 +304,19 @@ section {
             display: flex;
             flex: content;
             border-radius: $radius;
-            padding: $padding-common/4;
+            padding: $tile-padding;
+            // padding: $block-common/4;
             background-color: $accent;
             min-width: 10rem;
             // flex: 1;
             // width: 35%;
             max-width: 20rem;
-            margin: $margin-common;
+            margin: $tile-margin;
             justify-content: space-between;
             background-position: center;
             background-size: cover;
             .button {
-                margin-block: $padding-common/4;
+                margin-block: $button-margin-common;
             }
             h1, p, li {
                 color: $main;
@@ -323,12 +325,12 @@ section {
         .dev-checklist {
             padding: 0;
             margin: 0;
-            margin-block: $padding-common/4;
+            margin-block: $block-common/4;
             // margin-inline: $padding-common;
             div {
                 display: flex;
                 flex-direction: row;
-                padding: $spacing-common;
+                padding: $inline-spacing-common;
                 margin: 0;
                 justify-content: flex-start;
                 p {
@@ -337,7 +339,7 @@ section {
             }
             .checkbox {
                 width: 10%;
-                padding-inline: $spacing-common;
+                padding-inline: $inline-spacing-common;
             }
         }
     }
@@ -437,7 +439,7 @@ footer {
         }
         .navigation {
             a {
-                padding-block: $text-blockmargin*3;
+                padding-block: $block-font*3;
                 text-decoration: none;
                 font-weight: 600;
             }
@@ -453,11 +455,11 @@ footer {
     a {
         max-width: 20%;
         display: flex;
-        margin-inline: $spacing-common; 
+        margin-inline: $inline-spacing-common; 
         justify-content: center;
     }
     img {
-        margin: $spacing-common;
+        margin: $inline-spacing-common;
         min-width: 100%;
         max-width: 20%;
         filter: invert(17%) sepia(0%) saturate(1259%) hue-rotate(275deg) brightness(105%) contrast(102%);
@@ -521,6 +523,10 @@ section.tiles.accent {
         padding: none;
     }
 
+    nav .hamburger {
+        position: absolute;
+    }
+
     footer .middle {
         flex-direction: column-reverse;
     }
@@ -539,7 +545,7 @@ section.tiles.accent {
 
 @media screen and (min-width: 769px) {
     nav .side {
-        padding-inline: $padding-common;
+        padding-inline: $block-common;
     }
 
     footer .middle {
@@ -557,4 +563,23 @@ section.tiles.accent {
         padding-inline: 10%;
     }
     
+}
+
+@media print {
+    nav {
+        display: none;
+    }
+    section {
+        padding-block: 0.5in;
+        padding-inline: 0.5in;
+    }
+    p {
+        font-size: 11pt !important;
+    }
+    h2 {
+        font-size: 14pt !important;
+    }
+    h1 {
+        font-size: 18pt !important;
+    }
 }

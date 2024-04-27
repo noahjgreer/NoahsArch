@@ -29,12 +29,7 @@ h1 {
 
 h2 {
   font-weight: 600;
-  font-size: 1.25rem;
-}
-
-h3 {
-  font-weight: 600;
-  font-size: 1.15rem;
+  font-size: 1.45rem;
 }
 
 h2.subtitle {
@@ -46,21 +41,25 @@ h2.subtitle {
 
 p, a, li {
   font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 h1, h2, h3, p, a, li {
   color: #2C2C2C;
-  margin-block: 0.25rem;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  margin-block: 2.5%;
+  margin-block: 0.25rem;
+}
+
+h1, h2, h3 {
+  margin-top: 0.75rem;
 }
 
 .button {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 600;
-  font-size: 1.125rem;
+  font-size: 1rem;
   text-decoration: none;
-  margin-block: 2.5%;
+  margin: 1rem;
   border-radius: 10rem;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -91,6 +90,7 @@ nav .navtext {
   justify-content: space-evenly;
   align-items: center;
   padding-inline: 25%;
+  margin-block: 0.75rem;
   flex-direction: row;
 }
 nav .side {
@@ -158,7 +158,7 @@ section {
   flex-wrap: wrap;
   min-height: 100vh;
   box-sizing: border-box;
-  padding: 8.5rem;
+  padding-block: 8.5rem;
   padding-inline: 25%;
   gap: 25%;
 }
@@ -172,22 +172,18 @@ section > div {
 .article {
   flex-direction: column;
 }
-.article h1, .article h2.subtitle, .article h3 {
+.article h1, .article h2.subtitle {
   text-align: center;
   margin: 0px;
   margin-bottom: 1rem;
 }
-.article h2 {
-  text-align: left;
-  margin-bottom: 0.25rem;
-}
 .article p {
-  margin-top: 0.5rem;
-  line-height: 1.75rem;
+  margin-bottom: 0.75rem;
+  line-height: 2rem;
 }
 
 #start {
-  padding-block: 26.25%;
+  max-height: 100vh;
 }
 #start > div > img {
   width: 55%;
@@ -260,17 +256,17 @@ section > div {
   display: flex;
   flex: content;
   border-radius: 1.5rem;
-  padding: 2.125rem;
+  padding: 1.4166666667rem 4.1666666667%;
   background-color: #DC3E26;
   min-width: 10rem;
   max-width: 20rem;
-  margin: 2rem;
+  margin: 2rem 2.5%;
   justify-content: space-between;
   background-position: center;
   background-size: cover;
 }
 .tiles .body div .button {
-  margin-block: 2.125rem;
+  margin-block: 1rem;
 }
 .tiles .body div h1, .tiles .body div p, .tiles .body div li {
   color: #FFFFFF;
@@ -465,6 +461,9 @@ section.tiles.accent .body div h1, section.tiles.accent .body div p {
     width: 100%;
     padding: none;
   }
+  nav .hamburger {
+    position: absolute;
+  }
   footer .middle {
     flex-direction: column-reverse;
   }
@@ -491,5 +490,23 @@ section.tiles.accent .body div h1, section.tiles.accent .body div p {
 @media screen and (max-width: 1024px) {
   section {
     padding-inline: 10%;
+  }
+}
+@media print {
+  nav {
+    display: none;
+  }
+  section {
+    padding-block: 0.5in;
+    padding-inline: 0.5in;
+  }
+  p {
+    font-size: 11pt !important;
+  }
+  h2 {
+    font-size: 14pt !important;
+  }
+  h1 {
+    font-size: 18pt !important;
   }
 }/*# sourceMappingURL=main.css.map */
