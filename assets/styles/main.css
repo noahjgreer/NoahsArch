@@ -24,26 +24,31 @@ html, body {
 
 h1 {
   font-weight: 600;
-  font-size: 2.25rem;
+  font-size: 1.65rem;
 }
 
 h2 {
   font-weight: 600;
-  font-size: 1.75rem;
+  font-size: 1.25rem;
+}
+
+h3 {
+  font-weight: 600;
+  font-size: 1.15rem;
 }
 
 h2.subtitle {
   font-weight: 400;
   font-style: italic;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin: 0px;
 }
 
 p, a, li {
-  font-size: 1.375rem;
+  font-size: 1rem;
 }
 
-h1, h2, p, a, li {
+h1, h2, h3, p, a, li {
   color: #2C2C2C;
   margin-block: 0.25rem;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -85,7 +90,7 @@ nav .navtext {
   max-height: 5rem;
   justify-content: space-evenly;
   align-items: center;
-  padding-inline: 15%;
+  padding-inline: 25%;
   flex-direction: row;
 }
 nav .side {
@@ -154,7 +159,7 @@ section {
   min-height: 100vh;
   box-sizing: border-box;
   padding: 8.5rem;
-  padding-inline: 15%;
+  padding-inline: 25%;
   gap: 25%;
 }
 section > div {
@@ -167,19 +172,22 @@ section > div {
 .article {
   flex-direction: column;
 }
-.article h1, .article h2 {
+.article h1, .article h2.subtitle, .article h3 {
   text-align: center;
   margin: 0px;
   margin-bottom: 1rem;
 }
+.article h2 {
+  text-align: left;
+  margin-bottom: 0.25rem;
+}
 .article p {
-  margin-block: 0.5rem;
-  line-height: 2rem;
-  text-indent: 5rem;
+  margin-top: 0.5rem;
+  line-height: 1.75rem;
 }
 
 #start {
-  padding-block: 15.75%;
+  padding-block: 26.25%;
 }
 #start > div > img {
   width: 55%;
@@ -215,7 +223,7 @@ section > div {
 .swipe {
   background-color: #DC3E26;
   padding-block: 8.5rem;
-  padding-inline: 7.5%;
+  padding-inline: 12.5%;
   gap: 15%;
   justify-content: space-evenly;
   position: relative;
@@ -358,7 +366,7 @@ section > div {
 footer {
   background-color: #2C2C2C;
   padding: 2rem;
-  padding-inline: 15%;
+  padding-inline: 25%;
 }
 footer h1, footer p, footer a {
   color: #FFFFFF;
@@ -478,5 +486,10 @@ section.tiles.accent .body div h1, section.tiles.accent .body div p {
   .navtext {
     display: flex;
     visibility: visible;
+  }
+}
+@media screen and (max-width: 1024px) {
+  section {
+    padding-inline: 10%;
   }
 }/*# sourceMappingURL=main.css.map */
