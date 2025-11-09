@@ -14,27 +14,37 @@ $radius: 1.5rem;
 $radius-round: 10rem;
 $tile-margin: $margin-common $inline-spacing-common;
 //// Fonts
-$font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$font: system-ui,
+-apple-system,
+BlinkMacSystemFont,
+'Segoe UI',
+Tahoma,
+Geneva,
+Verdana,
+sans-serif;
 ///// Heading
 $h1-fontsize: 1.65rem;
 $h2-fontsize: 1.45rem;
 $subtitle-fontsize: 1.2rem;
 ///// Paragraph
 $p-fontsize: 1rem;
+
 ///// Interactables
 @mixin i-fontinfo {
     font-family: $font;
     font-weight: 600;
     font-size: $p-fontsize;
 }
+
 /// Colors
-$main: #FFFFFF; 
+$main: #FFFFFF;
 $secondary: #2C2C2C;
 $accent: #DC3E26;
 
 // Style
 /// System
-html, body {
+html,
+body {
     margin: 0px;
     display: flex;
     flex-direction: column;
@@ -76,18 +86,35 @@ h2.subtitle {
     margin: 0px;
 }
 
-p, a, li {
+p,
+a,
+li,
+.caption {
     font-size: $p-fontsize;
     line-height: 1.5rem;
 }
 
-h1, h2, h3, p, a, li {
+h1,
+h2,
+h3,
+p,
+a,
+li,
+.caption {
     color: $secondary;
     font-family: $font;
     margin-block: $block-font;
 }
 
-h1, h2, h3 {
+.caption {
+    font-size: $p-fontsize - ($p-fontsize/4);
+    font-style: italic;
+    color: lighten($secondary, 50%);
+}
+
+h1,
+h2,
+h3 {
     margin-top: $heading-block;
 }
 
@@ -101,6 +128,7 @@ h1, h2, h3 {
     user-select: none;
     display: flex;
     align-items: center;
+
     padding: {
         block: 0.5rem;
         inline: 2rem;
@@ -132,6 +160,7 @@ nav {
         margin-block: $block-nav;
         flex-direction: row;
     }
+
     .side {
         position: fixed;
         left: 0;
@@ -142,13 +171,16 @@ nav {
         height: 100%;
         transform: translateX(-100%);
         transition: all 0.2s ease;
+
         a {
             line-height: 250%;
         }
     }
+
     .side.visible {
         transform: translateX(0%);
     }
+
     .hamburger {
         opacity: 0%;
         border-radius: 0px;
@@ -163,6 +195,7 @@ nav {
         cursor: pointer;
         transition: all 0.1s ease;
         pointer-events: none;
+
         div {
             transition: all 0.2s ease;
             border-radius: $radius-round;
@@ -172,21 +205,26 @@ nav {
             height: 10%;
         }
     }
+
     .toggle {
         .top {
             transform: rotate(45deg) translate(15%, 345%);
         }
+
         .mid {
             opacity: 0%;
         }
+
         .end {
             transform: rotate(-45deg) translate(15%, -345%);
         }
     }
+
     .hamburger.visible {
         opacity: 100%;
         pointer-events: all;
     }
+
     a {
         text-decoration: none;
         font-weight: normal;
@@ -205,7 +243,8 @@ section {
     padding-block: $block-common;
     padding-inline: $inline-common;
     gap: 25%;
-    > div {
+
+    >div {
         // background-color: orange;
         padding-block: $inline-spacing-common*2;
         min-width: 10rem;
@@ -216,11 +255,14 @@ section {
 
 .article {
     flex-direction: column;
-    h1, h2.subtitle {
+
+    h1,
+    h2.subtitle {
         text-align: center;
         margin: 0px;
         margin-bottom: 1rem;
     }
+
     p {
         margin-bottom: $heading-block;
         line-height: 2rem;
@@ -231,6 +273,7 @@ section {
 
 #start {
     max-height: 100vh;
+
     >div>img {
         width: 55%;
     }
@@ -244,9 +287,11 @@ section {
     width: 100%;
     overflow: hidden;
 
-    h1, p {
+    h1,
+    p {
         color: $main;
     }
+
     &.top {
         transform: rotateY(180deg);
         filter: invert(1);
@@ -254,6 +299,7 @@ section {
         pointer-events: none;
         top: 0;
     }
+
     &.bottom {
         filter: invert(1);
         transform: scaleY(-1) scale(1.25);
@@ -270,14 +316,21 @@ section {
     justify-content: space-evenly;
     position: relative;
     width: 100%;
-    h1, p {
+
+    h1,
+    p {
         color: $main;
     }
+}
+
+.left-aligned {
+    text-align: left;
 }
 
 .tiles {
     flex-direction: column;
     align-items: center;
+
     >div {
         max-width: unset;
         width: 100%;
@@ -286,19 +339,26 @@ section {
         flex-wrap: wrap;
         align-items: stretch;
     }
+
     &.unstrict {
         >div {
             align-items: center !important;
         }
     }
+
     .intro {
         flex-direction: column;
         width: 50%;
         margin-block: $inline-spacing-common;
-        h1, p, a, li {
+
+        h1,
+        p,
+        a,
+        li {
             margin: $inline-spacing-common/3;
         }
     }
+
     .body {
         div {
             display: flex;
@@ -315,17 +375,23 @@ section {
             justify-content: space-between;
             background-position: center;
             background-size: cover;
+
             .button {
                 margin-block: $button-margin-common;
             }
-            h1, p, li {
+
+            h1,
+            p,
+            li {
                 color: $main;
             }
         }
+
         .dev-checklist {
             padding: 0;
             margin: 0;
             margin-block: $block-common/4;
+
             // margin-inline: $padding-common;
             div {
                 display: flex;
@@ -333,10 +399,12 @@ section {
                 padding: $inline-spacing-common;
                 margin: 0;
                 justify-content: flex-start;
+
                 p {
                     text-align: left;
                 }
             }
+
             .checkbox {
                 width: 10%;
                 padding-inline: $inline-spacing-common;
@@ -355,6 +423,7 @@ section {
 .gallery {
     flex-direction: column;
     align-items: center;
+
     >div {
         max-width: unset;
         width: 100%;
@@ -363,12 +432,15 @@ section {
         flex-wrap: wrap;
         align-items: stretch;
     }
+
     .intro {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
+
     .body {
+
         /**
         div {
             // flex: content;
@@ -393,15 +465,17 @@ section {
                 color: $main;
             }
         }**/
-        > div {
+        >div {
             min-width: 15rem;
             max-width: 25rem;
             padding: $margin-common;
             flex-direction: column;
-            > div {
+
+            >div {
                 justify-content: end;
                 align-items: flex-start;
                 width: 100%;
+
                 p {
                     position: absolute;
                     color: white;
@@ -414,29 +488,91 @@ section {
     }
 }
 
+.gallery.wide {
+    padding-inline: 12.5%;
+}
+
+section.palette {
+    min-height: unset;
+    padding-block: 4.25rem;
+    gap: 0;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    >div {
+        min-height: unset;
+        padding-block: 1rem;
+        /* allow items to wrap to new rows instead of overflowing */
+        gap: $margin-common/2;
+        justify-content: center;
+        flex-direction: row;
+        /* important: enable wrapping so the palette tiles don't run off-screen */
+        flex-wrap: wrap;
+        max-width: 100%;
+        width: 100%;
+        min-width: unset;
+        flex: 1;
+
+        >div {
+            width: unset;
+            padding-block: $block-common/8;
+
+            >div {
+                height: 12rem;
+                max-height: 12rem;
+                width: 12rem;
+                max-width: 12rem;
+                border-radius: $radius-round;
+                margin: $margin-common/2;
+                aspect-ratio: 1/1;
+                transition: all 0.25s cubic-bezier( 0.165, 0.84, 0.44, 1 );
+                p {
+                    user-select: none;
+                }
+                &:hover {
+                    transform: scale(1.125);
+                }
+
+                // p {//     font-weight: bold;
+                // }
+            }
+        }
+    }
+}
+
 footer {
     background-color: $secondary;
     padding: $margin-common;
     padding-inline: $inline-common;
-    h1, p, a {
+
+    h1,
+    p,
+    a {
         color: $main;
     }
+
     div {
         margin-block: $margin-common;
     }
+
     .bottom {
         margin-bottom: 0px;
     }
+
     .middle {
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
+
         div {
             min-width: 10rem;
         }
+
         .logo {
             max-width: 15%;
         }
+
         .navigation {
             a {
                 padding-block: $block-font*3;
@@ -452,18 +588,21 @@ footer {
     flex-direction: row;
     // margin-inline: $inline-common;
     padding: 0;
+
     a {
         max-width: 20%;
         display: flex;
-        margin-inline: $inline-spacing-common; 
+        margin-inline: $inline-spacing-common;
         justify-content: center;
     }
+
     img {
         margin: $inline-spacing-common;
         min-width: 100%;
         max-width: 20%;
         filter: invert(17%) sepia(0%) saturate(1259%) hue-rotate(275deg) brightness(105%) contrast(102%);
     }
+
     svg>circle {
         fill: #FFFFFF;
     }
@@ -502,15 +641,21 @@ section.accent {
 
 section.tiles.accent {
     .intro {
-        h1, p {
+
+        h1,
+        p {
             color: $main;
         }
     }
+
     .body {
         div {
-            h1, p {
+
+            h1,
+            p {
                 color: $secondary;
             }
+
             background-color: $main;
         }
     }
@@ -562,23 +707,27 @@ section.tiles.accent {
     section {
         padding-inline: 10%;
     }
-    
+
 }
 
 @media print {
     nav {
         display: none;
     }
+
     section {
         padding-block: 0.5in;
         padding-inline: 0.5in;
     }
+
     p {
         font-size: 11pt !important;
     }
+
     h2 {
         font-size: 14pt !important;
     }
+
     h1 {
         font-size: 18pt !important;
     }

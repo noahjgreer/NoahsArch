@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   margin: 0px;
   display: flex;
   flex-direction: column;
@@ -39,18 +40,35 @@ h2.subtitle {
   margin: 0px;
 }
 
-p, a, li {
+p,
+a,
+li,
+.caption {
   font-size: 1rem;
   line-height: 1.5rem;
 }
 
-h1, h2, h3, p, a, li {
+h1,
+h2,
+h3,
+p,
+a,
+li,
+.caption {
   color: #2C2C2C;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin-block: 0.25rem;
 }
 
-h1, h2, h3 {
+.caption {
+  font-size: 0.75rem;
+  font-style: italic;
+  color: rgb(171.5, 171.5, 171.5);
+}
+
+h1,
+h2,
+h3 {
   margin-top: 0.75rem;
 }
 
@@ -172,7 +190,8 @@ section > div {
 .article {
   flex-direction: column;
 }
-.article h1, .article h2.subtitle {
+.article h1,
+.article h2.subtitle {
   text-align: center;
   margin: 0px;
   margin-bottom: 1rem;
@@ -197,7 +216,8 @@ section > div {
   width: 100%;
   overflow: hidden;
 }
-.separator h1, .separator p {
+.separator h1,
+.separator p {
   color: #FFFFFF;
 }
 .separator.top {
@@ -225,8 +245,13 @@ section > div {
   position: relative;
   width: 100%;
 }
-.swipe h1, .swipe p {
+.swipe h1,
+.swipe p {
   color: #FFFFFF;
+}
+
+.left-aligned {
+  text-align: left;
 }
 
 .tiles {
@@ -249,7 +274,10 @@ section > div {
   width: 50%;
   margin-block: 2.5%;
 }
-.tiles .intro h1, .tiles .intro p, .tiles .intro a, .tiles .intro li {
+.tiles .intro h1,
+.tiles .intro p,
+.tiles .intro a,
+.tiles .intro li {
   margin: 0.8333333333%;
 }
 .tiles .body div {
@@ -268,7 +296,9 @@ section > div {
 .tiles .body div .button {
   margin-block: 1rem;
 }
-.tiles .body div h1, .tiles .body div p, .tiles .body div li {
+.tiles .body div h1,
+.tiles .body div p,
+.tiles .body div li {
   color: #FFFFFF;
 }
 .tiles .body .dev-checklist {
@@ -359,12 +389,63 @@ section > div {
   text-align: left;
 }
 
+.gallery.wide {
+  padding-inline: 12.5%;
+}
+
+section.palette {
+  min-height: unset;
+  padding-block: 4.25rem;
+  gap: 0;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+section.palette > div {
+  min-height: unset;
+  padding-block: 1rem;
+  /* allow items to wrap to new rows instead of overflowing */
+  gap: 1rem;
+  justify-content: center;
+  flex-direction: row;
+  /* important: enable wrapping so the palette tiles don't run off-screen */
+  flex-wrap: wrap;
+  max-width: 100%;
+  width: 100%;
+  min-width: unset;
+  flex: 1;
+}
+section.palette > div > div {
+  width: unset;
+  padding-block: 1.0625rem;
+}
+section.palette > div > div > div {
+  height: 12rem;
+  max-height: 12rem;
+  width: 12rem;
+  max-width: 12rem;
+  border-radius: 10rem;
+  margin: 1rem;
+  aspect-ratio: 1/1;
+  transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+section.palette > div > div > div p {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+section.palette > div > div > div:hover {
+  transform: scale(1.125);
+}
+
 footer {
   background-color: #2C2C2C;
   padding: 2rem;
   padding-inline: 25%;
 }
-footer h1, footer p, footer a {
+footer h1,
+footer p,
+footer a {
   color: #FFFFFF;
 }
 footer div {
@@ -446,13 +527,15 @@ section.accent {
   background-color: #DC3E26;
 }
 
-section.tiles.accent .intro h1, section.tiles.accent .intro p {
+section.tiles.accent .intro h1,
+section.tiles.accent .intro p {
   color: #FFFFFF;
 }
 section.tiles.accent .body div {
   background-color: #FFFFFF;
 }
-section.tiles.accent .body div h1, section.tiles.accent .body div p {
+section.tiles.accent .body div h1,
+section.tiles.accent .body div p {
   color: #2C2C2C;
 }
 
