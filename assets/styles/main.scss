@@ -110,6 +110,10 @@ li,
     font-size: $p-fontsize - ($p-fontsize/4);
     font-style: italic;
     color: lighten($secondary, 50%);
+    & a {
+        color: lighten($secondary, 50%);
+        font-size: $p-fontsize - ($p-fontsize/4);
+    }
 }
 
 h1,

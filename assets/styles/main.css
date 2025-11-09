@@ -65,6 +65,10 @@ li,
   font-style: italic;
   color: rgb(171.5, 171.5, 171.5);
 }
+.caption a {
+  color: rgb(171.5, 171.5, 171.5);
+  font-size: 0.75rem;
+}
 
 h1,
 h2,
