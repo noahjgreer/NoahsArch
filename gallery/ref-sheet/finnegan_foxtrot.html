@@ -50,6 +50,7 @@
     <meta name="twitter:image" content="/assets/og/gallery/furry-artwork.png">
     <!-- Function Scripting -->
     <script src="/assets/js/copy_to_clipboard.js" defer></script>
+    <script src="/assets/js/collage-builder.js"></script>
 </head>
 
 <body>
@@ -147,7 +148,8 @@
         <div class="intro">
             <h2>Gallery</h2>
         </div>
-        <div class="body">
+        <script>buildCollage('/assets/json/artwork.json', 'refsheet-gallery', {tags: ["finni", "refsheet"]});</script>
+        <div class="body" id="refsheet-gallery">
             <div>
                 <div>
                     <img src="https://muffinmode.net/cache/narch/furry/FinneganFoxtrot/20210813_183849673_iOS.jpg"

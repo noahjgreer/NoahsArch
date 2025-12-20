@@ -14,6 +14,20 @@
     },
     {
         "show": true,
+        "title": "Finnegwen",
+        "artist": "Sketchfluff",
+        "date": "08-21-2025",
+        "class": "Personal",
+        "medium": "Digital Art",
+        "capacity": "Shaded",
+        "type": "Fullbody",
+        "background": "None",
+        "img_url": "https://muffinmode.net/cache/narch/furry/FinneganFoxtrot/Finnigwen-No-Bg.png",
+        "backup_url": "",
+        "tags": ["finni", "refsheet"]
+    },
+    {
+        "show": true,
         "title": "Art Fight 2025 - Zephyr's OC - Pancake",
         "artist": "FinniTheFox",
         "date": "07-28-2025",
@@ -24,6 +38,20 @@
         "background": "Full",
         "img_url": "https://muffinmode.net/cache/narch/furry/Pancake-Zephyr-Preview.jpg",
         "backup_url": ""
+    },
+    {
+        "show": true,
+        "title": "Art Fight 2025 - Finni",
+        "artist": "KiwiFrog",
+        "date": "07-26-2025",
+        "class": "Personal",
+        "medium": "Digital Art",
+        "capacity": "Flat",
+        "type": "Headshot",
+        "background": "Simple",
+        "img_url": "https://muffinmode.net/cache/narch/furry/FinneganFoxtrot/Finni-Kiwi.png",
+        "backup_url": "",
+        "tags": ["finni", "refsheet"]
     },
     {
         "show": true,
@@ -53,6 +81,34 @@
     },
     {
         "show": true,
+        "title": "Art Fight 2025 - A Joyful Servant",
+        "artist": "JoshDraws07",
+        "date": "07-15-2025",
+        "class": "Personal",
+        "medium": "Digital Art",
+        "capacity": "Shaded",
+        "type": "Fullbody",
+        "background": "Full",
+        "img_url": "https://muffinmode.net/cache/narch/furry/FinneganFoxtrot/DgdlL6qNNmUPQICdzW4u0ve5FP9w6UrmIfDmARy3c1K3IAj3OdLUJkoxzvZZ.jpeg",
+        "backup_url": "",
+        "tags": ["finni", "refsheet"]
+    },
+    {
+        "show": true,
+        "title": "Kaboodled Finni",
+        "artist": "Giga Gamby",
+        "date": "02-16-2025",
+        "class": "Personal",
+        "medium": "Digital Art",
+        "capacity": "Flat",
+        "type": "Fullbody",
+        "background": "Simple",
+        "img_url": "https://muffinmode.net/cache/narch/furry/FinneganFoxtrot/Screenshot_1233.png",
+        "backup_url": "",
+        "tags": ["finni", "refsheet"]
+    },
+    {
+        "show": true,
         "title": "Joey and His Favorite Mouse",
         "artist": "FinniTheFox",
         "date": "01-01-2025",
@@ -76,6 +132,34 @@
         "background": "Full",
         "img_url": "https://muffinmode.net/cache/narch/furry/WhootyCFF2024.jpg",
         "backup_url": ""
+    },
+    {
+        "show": true,
+        "title": "Gift from Sketchfluff",
+        "artist": "Sketchfluff",
+        "date": "09-07-2024",
+        "class": "Personal",
+        "medium": "Digital Art",
+        "capacity": "Shaded",
+        "type": "Halfbody",
+        "background": "Simple",
+        "img_url": "https://muffinmode.net/cache/narch/furry/FinneganFoxtrot/20240907_045752205_iOS.png",
+        "backup_url": "",
+        "tags": ["finni", "refsheet"]
+    },
+    {
+        "show": true,
+        "title": "Gift from Forest",
+        "artist": "Forest",
+        "date": "07-14-2024",
+        "class": "Commission",
+        "medium": "Traditional Art",
+        "capacity": "Shaded",
+        "type": "Fullbody",
+        "background": "None",
+        "img_url": "https://muffinmode.net/cache/narch/furry/FinneganFoxtrot/20240714_145049.jpg",
+        "backup_url": "",
+        "tags": ["finni", "refsheet"]
     },
     {
         "show": true,
@@ -118,6 +202,20 @@
     },
     {
         "show": true,
+        "title": "Harest Gift from Nora",
+        "artist": "NoraTheCatbat",
+        "date": "10-10-2023",
+        "class": "Commission",
+        "medium": "Digital Art",
+        "capacity": "Shaded",
+        "type": "Halfbody",
+        "background": "Full",
+        "img_url": "https://muffinmode.net/cache/narch/furry/FinneganFoxtrot/Untitled788_20231010152711.png",
+        "backup_url": "",
+        "tags": ["finni", "refsheet"]
+    },
+    {
+        "show": true,
         "title": "Birthday Derg",
         "artist": "FinniTheFox",
         "date": "04-20-2023",
@@ -128,6 +226,20 @@
         "background": "Simple",
         "img_url": "https://muffinmode.net/cache/narch/furry/BirthdayDerg3.jpg",
         "backup_url": ""
+    },
+    {
+        "show": true,
+        "title": "CFF Christmas Exchange 2022",
+        "artist": "Beef Sauce",
+        "date": "12-15-2022",
+        "class": "Commission",
+        "medium": "Digital Art",
+        "capacity": "Flat",
+        "type": "Headshot",
+        "background": "Full",
+        "img_url": "https://muffinmode.net/cache/narch/furry/FinneganFoxtrot/IMG_1500.jpg",
+        "backup_url": "",
+        "tags": ["finni", "refsheet"]
     },
     {
         "show": true,
@@ -218,7 +330,8 @@
         "type": "Headshot",
         "background": "Simple",
         "img_url": "https://muffinmode.net/cache/narch/furry/ChibiFinni-Preview.jpg",
-        "backup_url": ""
+        "backup_url": "",
+        "tags": ["finni", "refsheet"]
     },
     {
         "show": true,
@@ -232,6 +345,20 @@
         "background": "",
         "img_url": "https://muffinmode.net/cache/narch/furry/2021-Preview.jpg",
         "backup_url": ""
+    },
+    {
+        "show": true,
+        "title": "CFF Christmas Exhange 2021",
+        "artist": "Lollie",
+        "date": "12-25-2021",
+        "class": "Commission",
+        "medium": "Digital Art",
+        "capacity": "Flat",
+        "type": "Fullbody",
+        "background": "Full",
+        "img_url": "https://muffinmode.net/cache/narch/furry/FinneganFoxtrot/20220110_130016000_iOS.jpg",
+        "backup_url": "",
+        "tags": ["finni", "refsheet"]
     },
     {
         "show": true,
@@ -296,7 +423,8 @@
         "type": "Fullbody",
         "background": "Simple",
         "img_url": "https://muffinmode.net/cache/narch/furry/FinniHalloween2021-Preview.jpg",
-        "backup_url": ""
+        "backup_url": "",
+        "tags": ["finni", "refsheet"]
     },
     {
         "show": true,
@@ -309,6 +437,7 @@
         "type": "Headshot",
         "background": "Simple",
         "img_url": "https://muffinmode.net/cache/narch/furry/Finnegan-Preview.jpg",
-        "backup_url": ""
+        "backup_url": "",
+        "tags": ["finni", "refsheet"]
     }
 ]
