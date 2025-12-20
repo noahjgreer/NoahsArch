@@ -6,6 +6,8 @@ function buildCollage(jsonName, containerId, filterObject = null) {
             let container = document.getElementById(containerId);
             container.innerHTML = '';
             data.forEach(item => {
+                // Check if item is to be shown
+                if (!item.show) return;
                 for (key in filterObject) {
                     // Handle tags array filtering
                     if (key === 'tags') {
