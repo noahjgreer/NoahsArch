@@ -48,6 +48,8 @@
     <meta name="twitter:description"
         content="Find a plethera of information, discover an archive of unique and detailed resources, view my collection of art and my creations and more on Noah's Arch.">
     <meta name="twitter:image" content="/assets/og/gallery/furry-artwork.png">
+    <!-- Function Scripting -->
+    <script src="/assets/js/copy_to_clipboard.js" defer></script>
 </head>
 
 <body>
@@ -94,7 +96,8 @@
         <div class="intro">
             <h2>Color Palette</h2>
         </div>
-        <div>
+        <script>document.addEventListener('DOMContentLoaded', function() { initiateCopyToClipboard(document.getElementById('color-palette')); });</script>
+        <div id="color-palette">
             <div>
                 <div style="background-color: #FF992F">
                     <p>Primary</p>
@@ -129,7 +132,7 @@
                 <div style="background-color: #c92127">
                     <p style="color: white">Bandana</p>
                 </div>
-                <p class="caption">#c92127</p>
+                <p class="caption">#C92127</p>
             </div>
             <div>
                 <div style="background-color: #F96DB9">

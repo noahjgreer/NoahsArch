@@ -437,9 +437,28 @@ section.palette > div > div > div p {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+  transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 section.palette > div > div > div:hover {
   transform: scale(1.125);
+}
+section.palette > div > div.copyable > div {
+  cursor: pointer;
+}
+section.palette > div > div.copyable > div .hover-text {
+  opacity: 0%;
+  position: absolute;
+  color: inherit;
+  transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1) 0.1s;
+}
+section.palette > div > div.copyable > div:hover {
+  filter: opacity(0.5);
+}
+section.palette > div > div.copyable > div:hover p {
+  opacity: 0%;
+}
+section.palette > div > div.copyable > div:hover .hover-text {
+  opacity: 100%;
 }
 
 footer {

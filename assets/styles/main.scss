@@ -533,13 +533,31 @@ section.palette {
                 transition: all 0.25s cubic-bezier( 0.165, 0.84, 0.44, 1 );
                 p {
                     user-select: none;
+                    transition: all 0.25s cubic-bezier( 0.165, 0.84, 0.44, 1 );
                 }
                 &:hover {
                     transform: scale(1.125);
                 }
-
-                // p {//     font-weight: bold;
-                // }
+            }
+            &.copyable {
+                > div {
+                    cursor: pointer;
+                    .hover-text {
+                        opacity: 0%;
+                        position: absolute;
+                        color: inherit;
+                        transition: all 0.25s cubic-bezier( 0.165, 0.84, 0.44, 1 ) 0.1s;
+                    }
+                    &:hover {
+                        filter: opacity(0.5);
+                        p {
+                            opacity: 0%;
+                        }
+                        .hover-text {
+                            opacity: 100%;
+                        }
+                    }
+                }
             }
         }
     }
