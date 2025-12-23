@@ -1,6 +1,20 @@
 [
     {
         "show": true,
+        "title": "Zacchaeus the Raccoon - (A Refsheet For Zachy)",
+        "artist": "FinniTheFox",
+        "date": "12-22-2025",
+        "class": "Commission",
+        "medium": "Digital Art",
+        "capacity": "Flat",
+        "type": "Refsheet",
+        "background": "Simple",
+        "img_url": "https://muffinmode.net/cache/narch/furry/ZachyFursona_004.png",
+        "backup_url": "",
+        "total_time": "295"
+    },
+    {
+        "show": true,
         "title": "Kara Amongst the Lilypads - CFF 2025",
         "artist": "FinniTheFox",
         "date": "12-17-2025",
@@ -10,7 +24,8 @@
         "type": "Fullbody",
         "background": "Full",
         "img_url": "https://muffinmode.net/cache/narch/furry/KaraVaporeon-Preview.jpg",
-        "backup_url": ""
+        "backup_url": "",
+        "total_time": "497"
     },
     {
         "show": true,
@@ -407,7 +422,7 @@
         "class": "Personal",
         "medium": "Digital Art",
         "capacity": "Shaded",
-        "type": "Fullbody",
+        "type": "Refsheet",
         "background": "Simple",
         "img_url": "https://muffinmode.net/cache/narch/furry/FinneganRefsheet-Preview.jpg",
         "backup_url": ""
