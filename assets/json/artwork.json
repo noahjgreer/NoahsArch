@@ -1,6 +1,20 @@
 [        
     {
         "show": true,
+        "title": "East LA / Wee(d) Little Man",
+        "artist": "FinniTheFox",
+        "date": "1-31-2026",
+        "class": "Personal",
+        "medium": "Digital Art",
+        "capacity": "Sketch",
+        "type": "Refsheet",
+        "background": "Simple",
+        "img_url": "https://muffinmode.net/cache/narch/furry/1-31-2026_002.png",
+        "backup_url": "",
+        "total_time": "72"
+    },
+    {
+        "show": true,
         "title": "Untitled",
         "artist": "FinniTheFox",
         "date": "1-30-2026",
