@@ -1,7 +1,21 @@
 [      
     {
         "show": true,
-        "title": "Untitled Sketch",
+        "title": "A sketch",
+        "artist": "FinniTheFox",
+        "date": "02-16-2026",
+        "class": "Personal",
+        "medium": "Digital Art",
+        "capacity": "Sketch",
+        "type": "Fullbody",
+        "background": "Simple",
+        "img_url": "https://muffinmode.net/cache/narch/furry/2026-02-16_001_practice_v1.png",
+        "backup_url": "",
+        "total_time": "81"
+    },
+    {
+        "show": true,
+        "title": "A sketch",
         "artist": "FinniTheFox",
         "date": "02-14-2026",
         "class": "None",
@@ -15,7 +29,7 @@
     },
     {
         "show": true,
-        "title": "Untitled Sketch",
+        "title": "A sketch",
         "artist": "FinniTheFox",
         "date": "02-14-2026",
         "class": "None",
@@ -57,7 +71,7 @@
     },
     {
         "show": true,
-        "title": "Untitled Sketch (ft. Caliburn Derggy)",
+        "title": "A sketch (ft. Caliburn Derggy)",
         "artist": "FinniTheFox",
         "date": "02-07-2026",
         "class": "None",
