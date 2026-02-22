@@ -394,15 +394,32 @@ section > div {
   padding-inline: 0;
 }
 .gallery.art .body {
-  display: grid;
-  grid: 25% 25% 25%/auto-flow;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: flex-start;
 }
 .gallery.art .body > div {
+  flex-grow: 0;
+  flex-shrink: 0;
   padding: 0;
   position: relative;
-  justify-content: flex-end;
+  overflow: hidden;
+  min-width: unset !important;
+  max-width: unset !important;
+}
+.gallery.art .body > div .item-display {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .gallery.art .body > div .item-display img {
+  height: 100% !important;
+  width: 100% !important;
+  -o-object-fit: contain;
+     object-fit: contain;
   border-radius: 0;
 }
 .gallery.art .body > div .item-description {
@@ -410,9 +427,11 @@ section > div {
   color: #2C2C2C;
   opacity: 0%;
   position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   width: 100%;
-  height: auto;
+  height: 100%;
   box-sizing: border-box;
   padding: 3rem 12.5%;
 }

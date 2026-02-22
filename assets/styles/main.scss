@@ -492,16 +492,31 @@ section {
 .gallery.art {
     padding-inline: 0;
     .body {
-        // justify-content:left;
-        display: grid;
-        grid: 25% 25% 25% / auto-flow;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        align-items: flex-start;
         
         > div {
-        padding: 0;
-        position: relative;
-        justify-content: flex-end;
+            flex-grow: 0;
+            flex-shrink: 0;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+            min-width: unset !important;
+            max-width: unset !important;
+            
             .item-display {
+                height: 100%;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                
                 img {
+                    height: 100% !important;
+                    width: 100% !important;
+                    object-fit: contain;
                     border-radius: 0;
                 }
             }
@@ -511,10 +526,12 @@ section {
                 opacity: 0%;
 
                 position: absolute;
+                top: 0;
+                left: 0;
                 display: flex;
 
                 width: 100%;
-                height: auto;
+                height: 100%;
                 box-sizing: border-box;
 
                 padding: 3rem 12.5%;
