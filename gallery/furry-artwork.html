@@ -65,83 +65,32 @@
         </div>
     </nav>
 
-    <section>
-        <div>
-            <h1>Furry Artwork</h1>
-            <p>Quick Jump to:</p>
-            <div class="button-holder">
-                <a href="./ref-sheet/finnegan_foxtrot.html" class="button main">My Refsheet</a>
-                <a href="#commissions" class="button main">Commissions</a>
-                <!-- <a href="#in-progress" class="button main">In-Progress</a> -->
-                <a href="#personal" class="button main">Personal</a>
-                <a href="#sketches" class="button main">Sketches</a>
-                <a href="#socials" class="button main">Social Media</a>
-                <!-- <a href="#contribute" class="button main">Contribute</a> -->
-            </div>
-        </div>
-    </section>
-
-    <section class="gallery" id="commissions">
+    <section class="gallery art">
         <div class="intro">
-            <h1>Commissions</h1>
+            <h1>All Artwork</h1>
         </div>
-        <script>buildCollage('/assets/json/artwork.json', 'commissions-body', {class: 'Commission', artist: "FinniTheFox"});</script>
-        <div class="body" id="commissions-body">
-            
-        </div>
-    </section>
-
-    <!-- <section class="tiles" id="in-progress">
-        <div class="intro">
-            <h1>In-Progress</h1>
-            <p>View the status and progress of current commissions.</p>
-        </div>
+        <script>buildCollage('/assets/json/artwork.json', { artist: "FinniTheFox" });</script>
         <div class="body">
-            <h2>Right now, there are no incomplete commissions! Check back later! :3</h2>
             <div>
-                <h1>Commission Name</h1>
-                <div class="dev-checklist">
-                    <div>
-                        <img src="/assets/icons/checkbox-checked1.svg" alt="Checked" class="checkbox">
-                        <p>Wireframe</p>
-                    </div>
-
-                    <div>
-                        <img src="/assets/icons/checkbox-checked0.svg" alt="Unchecked" class="checkbox">
-                        <p>Sketching</p>
-                    </div>
-                    
-                    <div>
-                        <img src="/assets/icons/checkbox-checked0.svg" alt="Unchecked" class="checkbox">
-                        <p>Strokes</p>
-                    </div>
-
-                    <div>
-                        <img src="/assets/icons/checkbox-checked0.svg" alt="Unchecked" class="checkbox">
-                        <p>Color</p>
-                    </div>
-                    
-                    <div>
-                        <img src="/assets/icons/checkbox-checked0.svg" alt="Unchecked" class="checkbox">
-                        <p>Shading</p>
-                    </div>
-                    
-                    <div>
-                        <img src="/assets/icons/checkbox-checked0.svg" alt="Unchecked" class="checkbox">
-                        <p>Details and Cleanup</p>
-                    </div>
+                <div class="item-display">
+                    <img src="https://muffinmode.net/cache/narch/furry/2026-02-16_001_practice_v1.png" alt="ImageDesc"
+                        loading="lazy">
                 </div>
-                <a href="/404.html" class="button alt">View Folder</a>
+                <div class="item-description">
+                    <h3 class="title">Title</h3>
+                    <span class="artist">Artist</span>
+                    <p class="date">Date</p>
+                    <p class="total-time">TotalTime</p>
+                </div>
             </div>
-            <p>There aren't any commissions being worked on right now. <br>Check back later.</p>
         </div>
-    </section> -->
+    </section>
 
     <section class="gallery" id="personal">
         <div class="intro">
             <h1>Personal</h1>
         </div>
-        <script>buildCollage('/assets/json/artwork.json', 'personal-body', {class: 'Personal', artist: "FinniTheFox"});</script>
+        <!-- <script>buildCollage('/assets/json/artwork.json', 'personal-body', { class: 'Personal', artist: "FinniTheFox" });</script> -->
         <div class="body" id="personal-body">
 
         </div>
@@ -151,9 +100,9 @@
         <div class="intro">
             <h1>Sketches</h1>
         </div>
-        <script>buildCollage('/assets/json/artwork.json', 'sketches-body', {capacity: 'Sketch', artist: "FinniTheFox"});</script>
+        <!-- <script>buildCollage('/assets/json/artwork.json', 'sketches-body', { capacity: 'Sketch', artist: "FinniTheFox" });</script> -->
         <div class="body" id="sketches-body">
-            
+
         </div>
     </section>
 

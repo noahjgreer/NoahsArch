@@ -100,6 +100,7 @@ h3,
 p,
 a,
 li,
+span,
 .caption {
     color: $secondary;
     font-family: $font;
@@ -479,14 +480,6 @@ section {
                 justify-content: end;
                 align-items: flex-start;
                 width: 100%;
-
-                p {
-                    position: absolute;
-                    color: white;
-                    text-shadow: 0 0 20px #000;
-                    margin: $margin-common;
-                    text-align: left;
-                }
             }
         }
     }
@@ -494,6 +487,45 @@ section {
 
 .gallery.wide {
     padding-inline: 12.5%;
+}
+
+.gallery.art {
+    padding-inline: 0;
+    .body {
+        // justify-content:left;
+        display: grid;
+        grid: 25% 25% 25% / auto-flow;
+        
+        > div {
+        padding: 0;
+        position: relative;
+        justify-content: flex-end;
+            .item-display {
+                img {
+                    border-radius: 0;
+                }
+            }
+            .item-description {
+                background-color: #ffffff8d;
+                color: #2C2C2C;
+                opacity: 0%;
+
+                position: absolute;
+                display: flex;
+
+                width: 100%;
+                height: auto;
+                box-sizing: border-box;
+
+                padding: 3rem 12.5%;
+            }
+            &:hover {
+                .item-description {
+                    opacity: 100%;
+                }
+            }
+        }
+    }
 }
 
 section.palette {

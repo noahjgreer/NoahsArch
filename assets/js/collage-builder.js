@@ -1,9 +1,9 @@
 // Primary Runtime Function
-function buildCollage(jsonName, containerId, filterObject = null) {
+function buildCollage(jsonName, filterObject = null) {
     fetch(jsonName)
         .then(response => response.json())
         .then(data => {
-            let container = document.getElementById(containerId);
+            let container = document.querySelector('.gallery.art>.body');
             container.innerHTML = '';
             data.forEach(item => {
                 // Check if item is to be shown
@@ -29,10 +29,16 @@ function collageItem(object) {
     return `
     <!-- ${object.title} -->
     <div>
-        <div>
-            <img src="${object.img_url}" alt="${object.title}">
+        <div class="item-display">
+            <img src="${object.img_url}" alt="${object.title} by ${object.artist} - ${new Date(object.date).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}"
+                loading="lazy">
         </div>
-        <p class="caption">${object.title} by ${object.artist} - ${new Date(object.date).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+        <div class="item-description">
+            <h3 class="title">${object.title}</h3>
+            <span class="artist">${object.artist}</span>
+            <p class="date">${new Date(object.date).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+            <p class="total-time">${object.total_time} minutes</p>
+        </div>
     </div>
     `;
 }
