@@ -1,6 +1,21 @@
 [      
     {
         "show": true,
+        "title": "Slag Fop",
+        "artist": "FinniTheFox",
+        "date": "03-01-2026",
+        "class": "Personal",
+        "medium": "Digital Art",
+        "capacity": "Sketch",
+        "type": "Fullbody",
+        "background": "Simple",
+        "img_url": "https://muffinmode.net/cache/narch/furry/2026-03-01_002_practice_v2.png",
+        "tags": ["finni", "refsheet"],
+        "backup_url": "",
+        "total_time": "104"
+    },
+    {
+        "show": true,
         "title": "Backshot(s)",
         "artist": "FinniTheFox",
         "date": "02-26-2026",
