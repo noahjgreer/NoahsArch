@@ -1,4 +1,32 @@
-[      
+[     
+    {
+        "show": true,
+        "title": "Caught Being Adorable",
+        "artist": "FinniTheFox",
+        "date": "03-07-2026",
+        "class": "Personal",
+        "medium": "Digital Art",
+        "capacity": "Sketch",
+        "type": "Fullbody",
+        "background": "Simple",
+        "img_url": "https://muffinmode.net/cache/narch/furry/2026-03-07_001_practice_v2.png",
+        "backup_url": "",
+        "total_time": "89"
+    }, 
+    {
+        "show": true,
+        "title": "Pawtuah!",
+        "artist": "FinniTheFox",
+        "date": "03-05-2026",
+        "class": "Personal",
+        "medium": "Digital Art",
+        "capacity": "Sketch",
+        "type": "Focus",
+        "background": "None",
+        "img_url": "https://muffinmode.net/cache/narch/furry/2026-03-05_001_practice_v1.png",
+        "backup_url": "",
+        "total_time": "30"
+    }, 
     {
         "show": true,
         "title": "Slag Fop",

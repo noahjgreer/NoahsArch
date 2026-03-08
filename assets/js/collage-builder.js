@@ -163,7 +163,8 @@ function layoutJustifiedGallery(container, items, targetHeight, gap) {
 }
 
 function collageItem(object) {
-    return `
+    if (object.total_time) {
+        return `
     <!-- ${object.title} -->
     <div>
         <div class="item-display">
@@ -174,8 +175,24 @@ function collageItem(object) {
             <h3 class="title">${object.title}</h3>
             <span class="artist">${object.artist}</span>
             <p class="date">${new Date(object.date).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}</p>
-            <p class="total-time">${object.total_time} minutes</p>
+            <p class="total-time">${parseMinutes(object.total_time)}</p>
         </div>
     </div>
     `;
+    } else {
+        return `
+    <!-- ${object.title} -->
+    <div>
+        <div class="item-display">
+            <img src="${object.img_url}" alt="${object.title} by ${object.artist} - ${new Date(object.date).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}"
+                loading="lazy">
+        </div>
+        <div class="item-description">
+            <h3 class="title">${object.title}</h3>
+            <span class="artist">${object.artist}</span>
+            <p class="date">${new Date(object.date).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+        </div>
+    </div>
+    `;
+    }
 }
