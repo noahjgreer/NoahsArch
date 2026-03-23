@@ -1,6 +1,20 @@
 [     
     {
         "show": true,
+        "title": "A Thousand Years",
+        "artist": "FinniTheFox",
+        "date": "03-23-2026",
+        "class": "Personal",
+        "medium": "Digital Art",
+        "capacity": "Sketch",
+        "type": "Fullbody",
+        "background": "Full",
+        "img_url": "https://muffinmode.net/cache/narch/furry/2026-03-23_001_practice_v2.png",
+        "backup_url": "",
+        "total_time": "106"
+    }, 
+    {
+        "show": true,
         "title": "Caught Being Adorable",
         "artist": "FinniTheFox",
         "date": "03-07-2026",
