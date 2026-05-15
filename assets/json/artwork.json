@@ -1,6 +1,6 @@
 [
     {
-        "show": true,
+        "show": false,
         "title": "Dragon Scented Boysmell (Candle Label for VRChat World)",
         "artist": "FinniTheFox",
         "date": "03-28-2026",
@@ -14,7 +14,7 @@
         "total_time": "42"
     },
     {
-        "show": true,
+        "show": false,
         "title": "A Thousand Years",
         "artist": "FinniTheFox",
         "date": "03-23-2026",
@@ -92,7 +92,7 @@
         "total_time": "101"
     },
     {
-        "show": true,
+        "show": false,
         "title": "Holding Pawbs",
         "artist": "FinniTheFox",
         "date": "02-20-2026",
