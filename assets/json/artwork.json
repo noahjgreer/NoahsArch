@@ -12,6 +12,9 @@
         "img_url": "https://muffinmode.net/cache/narch/furry/2026-06-30_001_practice_v5.png",
         "preview_url": "https://muffinmode.net/cache/narch/furry/thumbs/2026-06-30_001_practice_v5.jpg",
         "backup_url": "",
+        "tags": [
+            "finni"
+        ],
         "total_time": "219"
     },
     {
@@ -27,7 +30,30 @@
         "img_url": "https://muffinmode.net/cache/narch/furry/2026-06-28_001_practice_v1.png",
         "preview_url": "https://muffinmode.net/cache/narch/furry/thumbs/2026-06-28_001_practice_v1.jpg",
         "backup_url": "",
+        "tags": [
+            "finni",
+            "refsheet"
+        ],
         "total_time": "54"
+    },
+    {
+        "show": true,
+        "title": "Finni",
+        "artist": "@_Spicey",
+        "date": "06-26-2026",
+        "class": "Commission",
+        "medium": "Digital Art",
+        "capacity": "Shaded",
+        "type": "Halfbody",
+        "background": "Simple",
+        "img_url": "https://muffinmode.net/cache/narch/furry/Finni_by_@_Spicey.png",
+        "preview_url": "https://muffinmode.net/cache/narch/furry/thumbs/Finni_by_@_Spicey.jpg",
+        "backup_url": "",
+        "tags": [
+            "finni",
+            "refsheet"
+        ],
+        "total_time": null
     },
     {
         "show": true,
@@ -42,6 +68,10 @@
         "img_url": "https://muffinmode.net/cache/narch/furry/2026-05-11_001_practice_v2.png",
         "preview_url": "https://muffinmode.net/cache/narch/furry/thumbs/2026-05-11_001_practice_v2.jpg",
         "backup_url": "",
+        "tags": [
+            "finni",
+            "refsheet"
+        ],
         "total_time": "172"
     },
     {
@@ -72,6 +102,9 @@
         "img_url": "https://muffinmode.net/cache/narch/furry/2026-03-23_001_practice_v2.png",
         "preview_url": "https://muffinmode.net/cache/narch/furry/thumbs/2026-03-23_001_practice_v2.jpg",
         "backup_url": "",
+        "tags": [
+            "finni"
+        ],
         "total_time": "106"
     },
     {
