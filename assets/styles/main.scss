@@ -572,6 +572,7 @@ section {
         max-height: 82vh;
         object-fit: contain;
         cursor: default;
+        pointer-events: auto;
         box-shadow: 0 0 2rem rgba(0, 0, 0, 0.5);
     }
 

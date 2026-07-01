@@ -214,7 +214,11 @@ function initLightbox(container) {
     }
 
     container.addEventListener('click', (event) => {
-        const img = event.target.closest('.item-display img');
+        // Images have pointer-events: none site-wide, so clicks land on
+        // .item-display itself rather than the <img> inside it.
+        const display = event.target.closest('.item-display');
+        if (!display) return;
+        const img = display.querySelector('img');
         if (!img) return;
         openLightbox(lightbox, img.dataset.full || img.src, img.alt);
     });
