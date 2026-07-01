@@ -1,5 +1,47 @@
 [
     {
+        "show": true,
+        "title": "Sideboys",
+        "artist": "FinniTheFox",
+        "date": "06-30-2026",
+        "class": "Commission",
+        "medium": "Digital Art",
+        "capacity": "Shaded",
+        "type": "Fullbody",
+        "background": "Full",
+        "img_url": "https://muffinmode.net/cache/narch/furry/2026-06-30_001_practice_v5.png",
+        "backup_url": "",
+        "total_time": "219"
+    },
+    {
+        "show": true,
+        "title": "Art Fight Temp. PFP 2026",
+        "artist": "FinniTheFox",
+        "date": "06-28-2026",
+        "class": "Personal",
+        "medium": "Digital Art",
+        "capacity": "Flat",
+        "type": "Headshot",
+        "background": "Simple",
+        "img_url": "https://muffinmode.net/cache/narch/furry/2026-06-28_001_practice_v1.png",
+        "backup_url": "",
+        "total_time": "54"
+    },
+    {
+        "show": true,
+        "title": "Magnum Opus Attempt #1",
+        "artist": "FinniTheFox",
+        "date": "05-11-2026",
+        "class": "Personal",
+        "medium": "Digital Art",
+        "capacity": "Sketch",
+        "type": "Fullbody",
+        "background": "Simple",
+        "img_url": "https://muffinmode.net/cache/narch/furry/2026-05-11_001_practice_v2.png",
+        "backup_url": "",
+        "total_time": "172"
+    },
+    {
         "show": false,
         "title": "Dragon Scented Boysmell (Candle Label for VRChat World)",
         "artist": "FinniTheFox",
