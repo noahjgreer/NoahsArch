@@ -517,6 +517,7 @@ section {
                 img {
                     height: 100% !important;
                     width: 100% !important;
+                    cursor: zoom-in;
                     object-fit: contain;
                     border-radius: 0;
                 }
@@ -546,6 +547,50 @@ section {
                 }
             }
         }
+    }
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.9);
+    cursor: zoom-out;
+
+    &.open {
+        display: flex;
+    }
+
+    .lightbox-img {
+        max-width: 90vw;
+        max-height: 82vh;
+        object-fit: contain;
+        cursor: default;
+        box-shadow: 0 0 2rem rgba(0, 0, 0, 0.5);
+    }
+
+    .lightbox-caption {
+        color: #ffffff;
+        text-align: center;
+        cursor: default;
+    }
+
+    .lightbox-close {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        background: none;
+        border: none;
+        color: #ffffff;
+        font-size: 2.5rem;
+        line-height: 1;
+        cursor: pointer;
     }
 }
 

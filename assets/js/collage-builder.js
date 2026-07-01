@@ -33,6 +33,9 @@ function buildCollage(jsonName, filterObject = null) {
 
             // Add resize listener for responsive layout
             setupResizeListener(container);
+
+            // Allow clicking a thumbnail to view the full-resolution image
+            initLightbox(container);
         })
         .catch(error => console.error('Error loading JSON:', error));
 }
@@ -163,36 +166,71 @@ function layoutJustifiedGallery(container, items, targetHeight, gap) {
 }
 
 function collageItem(object) {
-    if (object.total_time) {
-        return `
+    const alt = `${object.title} by ${object.artist} - ${new Date(object.date).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}`;
+    const thumbSrc = object.preview_url || object.img_url;
+    const extraRow = object.total_time
+        ? `<p class="total-time">${parseMinutes(object.total_time)}</p>`
+        : '';
+    return `
     <!-- ${object.title} -->
     <div>
         <div class="item-display">
-            <img src="${object.img_url}" alt="${object.title} by ${object.artist} - ${new Date(object.date).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}"
+            <img src="${thumbSrc}" data-full="${object.img_url}" alt="${alt}"
                 loading="lazy">
         </div>
         <div class="item-description">
             <h3 class="title">${object.title}</h3>
             <span class="artist">${object.artist}</span>
             <p class="date">${new Date(object.date).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}</p>
-            <p class="total-time">${parseMinutes(object.total_time)}</p>
+            ${extraRow}
         </div>
     </div>
     `;
-    } else {
-        return `
-    <!-- ${object.title} -->
-    <div>
-        <div class="item-display">
-            <img src="${object.img_url}" alt="${object.title} by ${object.artist} - ${new Date(object.date).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}"
-                loading="lazy">
-        </div>
-        <div class="item-description">
-            <h3 class="title">${object.title}</h3>
-            <span class="artist">${object.artist}</span>
-            <p class="date">${new Date(object.date).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}</p>
-        </div>
-    </div>
-    `;
+}
+
+// Lightbox: click a gallery thumbnail to view the full-resolution image,
+// which is only fetched on demand rather than on page load.
+function initLightbox(container) {
+    let lightbox = document.getElementById('gallery-lightbox');
+    if (!lightbox) {
+        lightbox = document.createElement('div');
+        lightbox.id = 'gallery-lightbox';
+        lightbox.className = 'lightbox';
+        lightbox.innerHTML = `
+            <button class="lightbox-close" aria-label="Close">&times;</button>
+            <img class="lightbox-img" src="" alt="">
+            <p class="lightbox-caption"></p>
+        `;
+        document.body.appendChild(lightbox);
+
+        lightbox.addEventListener('click', (event) => {
+            if (event.target === lightbox || event.target.classList.contains('lightbox-close')) {
+                closeLightbox(lightbox);
+            }
+        });
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') closeLightbox(lightbox);
+        });
     }
+
+    container.addEventListener('click', (event) => {
+        const img = event.target.closest('.item-display img');
+        if (!img) return;
+        openLightbox(lightbox, img.dataset.full || img.src, img.alt);
+    });
+}
+
+function openLightbox(lightbox, fullSrc, caption) {
+    const img = lightbox.querySelector('.lightbox-img');
+    img.src = fullSrc;
+    img.alt = caption;
+    lightbox.querySelector('.lightbox-caption').textContent = caption;
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox(lightbox) {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+    lightbox.querySelector('.lightbox-img').src = '';
 }
