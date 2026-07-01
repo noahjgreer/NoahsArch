@@ -31,8 +31,12 @@ function buildCollage(jsonName, filterObject = null) {
             // Apply justified layout after images are added
             justifyGallery(container);
 
-            // Add resize listener for responsive layout
-            setupResizeListener(container);
+            // Re-layout once the scrollbar has had a chance to appear
+            // (scrollbar narrows the container after the first layout pass)
+            setTimeout(() => justifyGallery(container), 0);
+
+            // Re-layout whenever the container changes width (scrollbar, resize, etc.)
+            setupResizeObserver(container);
 
             // Allow clicking a thumbnail to view the full-resolution image
             initLightbox(container);
@@ -40,23 +44,21 @@ function buildCollage(jsonName, filterObject = null) {
         .catch(error => console.error('Error loading JSON:', error));
 }
 
-// Setup resize listener for responsive layout
+// Watch the container for width changes (window resize AND scrollbar appearing)
 let resizeTimeout;
-function setupResizeListener(container) {
-    // Remove any existing listener to prevent duplicates
-    if (window.galleryResizeHandler) {
-        window.removeEventListener('resize', window.galleryResizeHandler);
+function setupResizeObserver(container) {
+    if (window.galleryResizeObserver) {
+        window.galleryResizeObserver.disconnect();
     }
-
-    window.galleryResizeHandler = () => {
-        // Debounce resize events for performance
+    let lastWidth = container.getBoundingClientRect().width;
+    window.galleryResizeObserver = new ResizeObserver(entries => {
+        const newWidth = entries[0].contentRect.width;
+        if (Math.abs(newWidth - lastWidth) < 0.5) return; // ignore sub-pixel noise
+        lastWidth = newWidth;
         clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(() => {
-            justifyGallery(container);
-        }, 150);
-    };
-
-    window.addEventListener('resize', window.galleryResizeHandler);
+        resizeTimeout = setTimeout(() => justifyGallery(container), 150);
+    });
+    window.galleryResizeObserver.observe(container);
 }
 
 // Calculate justified layout with dynamic row heights
@@ -98,16 +100,15 @@ function justifyGallery(container) {
 }
 
 function layoutJustifiedGallery(container, items, targetHeight, gap) {
-    // Get the actual available width for flex items (content area, excluding padding and borders)
     const computedStyle = window.getComputedStyle(container);
+    // Read the actual rendered gap so JS and CSS always agree on spacing
+    const actualGap = parseFloat(computedStyle.columnGap) || gap;
     const paddingLeft = parseFloat(computedStyle.paddingLeft) || 0;
     const paddingRight = parseFloat(computedStyle.paddingRight) || 0;
     const borderLeft = parseFloat(computedStyle.borderLeftWidth) || 0;
     const borderRight = parseFloat(computedStyle.borderRightWidth) || 0;
-
-    // Use offsetWidth (total width) then subtract padding and borders to get content width
-    // This works correctly with box-sizing: border-box and percentage-based padding
-    const containerWidth = container.offsetWidth - paddingLeft - paddingRight - borderLeft - borderRight;
+    // getBoundingClientRect gives a float, avoiding integer-rounding errors from offsetWidth
+    const containerWidth = container.getBoundingClientRect().width - paddingLeft - paddingRight - borderLeft - borderRight;
     let currentRow = [];
     let currentRowWidth = 0;
     const rows = [];
@@ -116,7 +117,7 @@ function layoutJustifiedGallery(container, items, targetHeight, gap) {
         const itemWidth = targetHeight * item.aspectRatio;
 
         // Check if adding this item would overflow the row
-        const totalGapsIfAdded = currentRow.length * gap;
+        const totalGapsIfAdded = currentRow.length * actualGap;
         const wouldOverflow = currentRowWidth + itemWidth + totalGapsIfAdded > containerWidth;
 
         if (wouldOverflow && currentRow.length > 0) {
@@ -140,7 +141,7 @@ function layoutJustifiedGallery(container, items, targetHeight, gap) {
     rows.forEach((row, rowIndex) => {
         // Calculate total width of items at target height
         const totalWidth = row.reduce((sum, item) => sum + (targetHeight * item.aspectRatio), 0);
-        const totalGaps = (row.length - 1) * gap;
+        const totalGaps = (row.length - 1) * actualGap;
         const availableWidth = containerWidth - totalGaps;
 
         // Calculate scale factor to make row fill container width
