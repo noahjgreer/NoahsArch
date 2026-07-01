@@ -883,12 +883,16 @@
         "date": "11-11-2021",
         "class": "Personal",
         "medium": "Digital Art",
-        "capacity": "Shaded",
+        "capacity": "Flat",
         "type": "Refsheet",
         "background": "Simple",
-        "img_url": "https://muffinmode.net/cache/narch/furry/FinneganRefsheet-Preview.jpg",
-        "preview_url": "https://muffinmode.net/cache/narch/furry/thumbs/FinneganRefsheet-Preview.jpg",
-        "backup_url": ""
+        "img_url": "https://muffinmode.net/cache/narch/furry/Finnegan-v2.6.png",
+        "preview_url": "https://muffinmode.net/cache/narch/furry/thumbs/Finnegan-v2.6.jpg",
+        "backup_url": "",
+        "tags": [
+            "finni",
+            "refsheet"
+        ]
     },
     {
         "show": true,
