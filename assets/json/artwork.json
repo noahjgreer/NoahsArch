@@ -1,6 +1,21 @@
 [
     {
         "show": true,
+        "title": "Gummy Shark - AF 2026",
+        "artist": "FinniTheFox",
+        "date": "07-01-2026",
+        "class": "Commission",
+        "medium": "Digital Art",
+        "capacity": "Flat",
+        "type": "Scene",
+        "background": "Full",
+        "img_url": "https://muffinmode.net/cache/narch/furry/2026-07-01_001_practice_v1.png",
+        "preview_url": "https://muffinmode.net/cache/narch/furry/thumbs/2026-07-01_001_practice_v1.jpg",
+        "backup_url": "",
+        "total_time": "71"
+    },
+    {
+        "show": true,
         "title": "Sideboys",
         "artist": "FinniTheFox",
         "date": "06-30-2026",
