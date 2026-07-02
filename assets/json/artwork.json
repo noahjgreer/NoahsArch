@@ -1,6 +1,21 @@
 [
     {
         "show": true,
+        "title": "Kari - AF 2026",
+        "artist": "FinniTheFox",
+        "date": "07-02-2026",
+        "class": "Commission",
+        "medium": "Digital Art",
+        "capacity": "Shaded",
+        "type": "Fullbody",
+        "background": "Simple",
+        "img_url": "https://muffinmode.net/cache/narch/furry/2026-07-02_001_practice_v2.png",
+        "preview_url": "https://muffinmode.net/cache/narch/furry/thumbs/2026-07-02_001_practice_v2.jpg",
+        "backup_url": "",
+        "total_time": "153"
+    },
+    {
+        "show": true,
         "title": "Gummy Shark - AF 2026",
         "artist": "FinniTheFox",
         "date": "07-01-2026",
