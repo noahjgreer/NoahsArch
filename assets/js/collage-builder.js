@@ -168,7 +168,13 @@ function layoutJustifiedGallery(container, items, targetHeight, gap) {
 
 function collageItem(object) {
     const alt = `${object.title} by ${object.artist} - ${new Date(object.date).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}`;
-    const thumbSrc = object.preview_url || object.img_url;
+    const thumbSrc = object.preview_webp_url || object.img_url;
+    const avifSource = object.preview_avif_url
+        ? `<source srcset="${object.preview_avif_url}" type="image/avif">`
+        : '';
+    const webpSource = object.preview_webp_url
+        ? `<source srcset="${object.preview_webp_url}" type="image/webp">`
+        : '';
     const extraRow = object.total_time
         ? `<p class="total-time">${parseMinutes(object.total_time)}</p>`
         : '';
@@ -176,8 +182,12 @@ function collageItem(object) {
     <!-- ${object.title} -->
     <div>
         <div class="item-display">
-            <img src="${thumbSrc}" data-full="${object.img_url}" alt="${alt}"
-                loading="lazy">
+            <picture>
+                ${avifSource}
+                ${webpSource}
+                <img src="${thumbSrc}" data-full="${object.img_url}" alt="${alt}"
+                    loading="lazy">
+            </picture>
         </div>
         <div class="item-description">
             <h3 class="title">${object.title}</h3>

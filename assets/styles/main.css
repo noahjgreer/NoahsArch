@@ -416,6 +416,9 @@ section > div {
   justify-content: center;
   align-items: center;
 }
+.gallery.art .body > div .item-display picture {
+  display: contents;
+}
 .gallery.art .body > div .item-display img {
   height: 100% !important;
   width: 100% !important;

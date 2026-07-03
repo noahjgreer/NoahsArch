@@ -513,7 +513,11 @@ section {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                
+
+                picture {
+                    display: contents;
+                }
+
                 img {
                     height: 100% !important;
                     width: 100% !important;
