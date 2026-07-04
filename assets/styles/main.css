@@ -1,3 +1,8 @@
+html {
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+}
+
 html,
 body {
   margin: 0px;
@@ -396,11 +401,22 @@ section > div {
 }
 .gallery.art .body {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 0.5rem;
-  align-items: flex-start;
 }
-.gallery.art .body > div {
+.gallery.art .body .gallery-row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 0.5rem;
+  min-width: unset !important;
+  max-width: unset !important;
+  padding: 0;
+  justify-content: flex-start;
+  align-items: stretch;
+  text-align: unset;
+}
+.gallery.art .body .gallery-item {
   flex-grow: 0;
   flex-shrink: 0;
   padding: 0;
@@ -409,17 +425,17 @@ section > div {
   min-width: unset !important;
   max-width: unset !important;
 }
-.gallery.art .body > div .item-display {
+.gallery.art .body .gallery-item .item-display {
   height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.gallery.art .body > div .item-display picture {
+.gallery.art .body .gallery-item .item-display picture {
   display: contents;
 }
-.gallery.art .body > div .item-display img {
+.gallery.art .body .gallery-item .item-display img {
   height: 100% !important;
   width: 100% !important;
   cursor: zoom-in;
@@ -427,7 +443,7 @@ section > div {
      object-fit: contain;
   border-radius: 0;
 }
-.gallery.art .body > div .item-description {
+.gallery.art .body .gallery-item .item-description {
   background-color: rgba(255, 255, 255, 0.5529411765);
   color: #2C2C2C;
   opacity: 0%;
@@ -440,7 +456,7 @@ section > div {
   transition: all 0.25s;
   translate: 0px 3rem;
 }
-.gallery.art .body > div:hover .item-description {
+.gallery.art .body .gallery-item:hover .item-description {
   opacity: 100%;
   translate: 0px 0rem;
 }

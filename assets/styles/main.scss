@@ -43,6 +43,11 @@ $accent: #DC3E26;
 
 // Style
 /// System
+html {
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+}
+
 html,
 body {
     margin: 0px;
@@ -494,11 +499,26 @@ section {
     padding-inline: 0;
     .body {
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: column;
         gap: 0.5rem;
-        align-items: flex-start;
-        
-        > div {
+
+        .gallery-row {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            gap: 0.5rem;
+            // Neutralize the generic `.gallery .body > div` rule (min/max-width,
+            // padding, centered alignment) meant for a different gallery variant,
+            // which this row wrapper would otherwise inherit as a direct child of .body.
+            min-width: unset !important;
+            max-width: unset !important;
+            padding: 0;
+            justify-content: flex-start;
+            align-items: stretch;
+            text-align: unset;
+        }
+
+        .gallery-item {
             flex-grow: 0;
             flex-shrink: 0;
             padding: 0;
@@ -506,7 +526,7 @@ section {
             overflow: hidden;
             min-width: unset !important;
             max-width: unset !important;
-            
+
             .item-display {
                 height: 100%;
                 width: 100%;

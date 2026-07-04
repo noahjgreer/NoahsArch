@@ -63,7 +63,7 @@ function setupResizeObserver(container) {
 
 // Calculate justified layout with dynamic row heights
 function justifyGallery(container) {
-    const items = Array.from(container.querySelectorAll('.gallery.art > .body > div'));
+    const items = Array.from(container.querySelectorAll('.gallery-item'));
 
     // Load all images first
     const imagePromises = items.map(item => {
@@ -157,11 +157,37 @@ function layoutJustifiedGallery(container, items, targetHeight, gap) {
 
         // Apply dimensions to each item in row
         row.forEach(item => {
-            const itemWidth = rowHeight * item.aspectRatio;
-            item.item.style.width = `${itemWidth}px`;
             item.item.style.height = `${rowHeight}px`;
+            if (scaleFactor === 1) {
+                // Underfilled last row: keep its natural (unstretched) size.
+                item.item.style.flex = '0 0 auto';
+                item.item.style.width = `${rowHeight * item.aspectRatio}px`;
+            } else {
+                // Let flexbox fill the row's real width at paint time,
+                // proportional to aspect ratio, rather than freezing in a
+                // pixel width computed from one width measurement here. A
+                // static width goes stale (and leaves a gap on the right)
+                // if the container's true width changes after this runs.
+                item.item.style.flex = `${item.aspectRatio} ${item.aspectRatio} 0`;
+                item.item.style.width = '';
+            }
         });
     });
+
+    // Group items into explicit row wrapper elements instead of relying on
+    // native flex-wrap to line-break in the same place this grouping did.
+    // Native wrapping can disagree with this by a fraction of a pixel (more
+    // likely the more items fit per row on wide displays), bumping an item
+    // to the next line where it renders at the wrong row's height.
+    const fragment = document.createDocumentFragment();
+    rows.forEach(row => {
+        const rowEl = document.createElement('div');
+        rowEl.className = 'gallery-row';
+        row.forEach(item => rowEl.appendChild(item.item));
+        fragment.appendChild(rowEl);
+    });
+    container.innerHTML = '';
+    container.appendChild(fragment);
 
     container.style.opacity = '1';
 }
@@ -180,7 +206,7 @@ function collageItem(object) {
         : '';
     return `
     <!-- ${object.title} -->
-    <div>
+    <div class="gallery-item">
         <div class="item-display">
             <picture>
                 ${avifSource}
