@@ -2,7 +2,9 @@
 const GALLERY_CONFIG = {
     targetRowHeight: 400, // Adjust this to make images larger or smaller
     gap: 8, // Gap between images in pixels (0.5rem = 8px)
-    lastRowThreshold: 0.7 // Don't stretch last row if it's less than this % full
+    lastRowThreshold: 0.7, // Don't stretch last row if it's less than this % full
+    mobileBreakpoint: 600 // Below this container width, force one full-width image per row
+                          // instead of packing multiple narrow images into a row
 };
 
 // Primary Runtime Function
@@ -109,6 +111,29 @@ function layoutJustifiedGallery(container, items, targetHeight, gap) {
     const borderRight = parseFloat(computedStyle.borderRightWidth) || 0;
     // getBoundingClientRect gives a float, avoiding integer-rounding errors from offsetWidth
     const containerWidth = container.getBoundingClientRect().width - paddingLeft - paddingRight - borderLeft - borderRight;
+
+    // On narrow screens, a fixed targetHeight lets multiple tall/narrow images
+    // pack into one row (each filling only its share of the row). That's
+    // correct per the justified-layout math, but not the single full-width
+    // column mobile visitors expect. Below the breakpoint, skip packing
+    // entirely and give every image its own full-width row.
+    if (containerWidth < GALLERY_CONFIG.mobileBreakpoint) {
+        const fragment = document.createDocumentFragment();
+        items.forEach(item => {
+            item.item.style.flex = '0 0 auto';
+            item.item.style.width = '100%';
+            item.item.style.height = `${containerWidth / item.aspectRatio}px`;
+            const rowEl = document.createElement('div');
+            rowEl.className = 'gallery-row';
+            rowEl.appendChild(item.item);
+            fragment.appendChild(rowEl);
+        });
+        container.innerHTML = '';
+        container.appendChild(fragment);
+        container.style.opacity = '1';
+        return;
+    }
+
     let currentRow = [];
     let currentRowWidth = 0;
     const rows = [];
