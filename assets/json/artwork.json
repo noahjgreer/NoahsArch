@@ -1,6 +1,22 @@
 [
     {
         "show": true,
+        "title": "Ropes",
+        "artist": "FinniTheFox",
+        "date": "08-07-2026",
+        "class": "Commission",
+        "medium": "Digital Art",
+        "capacity": "Shaded",
+        "type": "Fullbody",
+        "background": "Simple",
+        "img_url": "https://muffinmode.net/cache/narch/furry/2026-08-07_001_practice_v3.png",
+        "preview_avif_url": "https://muffinmode.net/cache/narch/furry/thumbs/2026-08-07_001_practice_v3.avif",
+        "preview_webp_url": "https://muffinmode.net/cache/narch/furry/thumbs/2026-08-07_001_practice_v3.webp",
+        "backup_url": "",
+        "total_time": "182"
+    },
+    {
+        "show": true,
         "title": "Grizz - AF 2026",
         "artist": "FinniTheFox",
         "date": "07-04-2026",
