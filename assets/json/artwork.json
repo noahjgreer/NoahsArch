@@ -1,6 +1,22 @@
 [
     {
         "show": true,
+        "title": "Crimson Commission #3",
+        "artist": "FinniTheFox",
+        "date": "08-16-2026",
+        "class": "Commission",
+        "medium": "Digital Art",
+        "capacity": "Shaded",
+        "type": "Fullbody",
+        "background": "Simple",
+        "img_url": "https://muffinmode.net/cache/narch/furry/2026-08-10_001_practice_v1.png",
+        "preview_avif_url": "https://muffinmode.net/cache/narch/furry/thumbs/2026-08-10_001_practice_v1.avif",
+        "preview_webp_url": "https://muffinmode.net/cache/narch/furry/thumbs/2026-08-10_001_practice_v1.webp",
+        "backup_url": "",
+        "total_time": "177"
+    },
+    {
+        "show": true,
         "title": "Pole",
         "artist": "FinniTheFox",
         "date": "08-08-2026",
