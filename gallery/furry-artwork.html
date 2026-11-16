@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link type="text/css" rel="stylesheet" href="/assets/styles/main.css">
+    <link type="text/css" rel="stylesheet" href="/assets/styles/gallery-filters.css">
     <!-- Search Engine Optimization -->
     <title>Noah's Arch - Gallery - Furry Artwork</title>
     <meta name="description"
@@ -50,6 +51,7 @@
     <meta name="twitter:image" content="/assets/og/gallery/furry-artwork.png">
     <!-- Function Scripts -->
     <script src="/assets/js/collage-builder.js"></script>
+    <script src="/assets/js/gallery-filters.js"></script>
     <script src="/assets/js/common.js"></script>
 </head>
 
@@ -70,21 +72,20 @@
         <div class="intro">
             <h1>All Artwork</h1>
         </div>
-        <script>buildCollage('/assets/json/artwork.json', { artist: "FinniTheFox" });</script>
-        <div class="body">
-            <div>
-                <div class="item-display">
-                    <img src="https://muffinmode.net/cache/narch/furry/2026-02-16_001_practice_v1.png" alt="ImageDesc"
-                        loading="lazy">
-                </div>
-                <div class="item-description">
-                    <h3 class="title">Title</h3>
-                    <span class="artist">Artist</span>
-                    <p class="date">Date</p>
-                    <p class="total-time">TotalTime</p>
-                </div>
-            </div>
-        </div>
+        <!-- Filter/sort/search bar. Built entirely from artwork.json at load
+             time, so new artists, tags or fields appear here on their own. -->
+        <div id="gallery-controls"></div>
+        <script>
+            buildCollage('/assets/json/artwork.json', null, {
+                filters: {
+                    mount: '#gallery-controls',
+                    // Starting view, not a lock: shown as a removable chip so
+                    // visitors can browse the other artists in the archive.
+                    defaults: { artist: ['FinniTheFox'] }
+                }
+            });
+        </script>
+        <div class="body"></div>
     </section>
 
     <section id="socials">

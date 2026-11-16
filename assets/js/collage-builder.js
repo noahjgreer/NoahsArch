@@ -8,42 +8,86 @@ const GALLERY_CONFIG = {
 };
 
 // Primary Runtime Function
-function buildCollage(jsonName, filterObject = null) {
-    fetch(jsonName)
+//
+// filterObject is a HARD filter: matching items are the only ones this page
+// can ever show. For a page that should let the visitor filter for themselves,
+// pass `options.filters` instead — see gallery-filters.js — and put the
+// starting selection in `options.filters.defaults`, which the visitor can
+// clear, rather than baking it in here.
+//
+// options: {
+//   filters: false | { mount: selector, defaults?: {field: [values]}, syncUrl?: bool }
+// }
+function buildCollage(jsonName, filterObject = null, options = {}) {
+    return fetch(jsonName)
         .then(response => response.json())
         .then(data => {
-            let container = document.querySelector('.gallery.art>.body');
-            container.innerHTML = '';
-            data.forEach(item => {
-                // Check if item is to be shown
-                if (!item.show) return;
-                for (key in filterObject) {
-                    // Handle tags array filtering
-                    if (key === 'tags') {
-                        let hasAllTags = filterObject[key].every(tag => item[key] && item[key].includes(tag));
-                        if (!hasAllTags) {
-                            return; // Skip this item if it doesn't have all the required tags
-                        }
-                    } else if (item[key] !== filterObject[key]) {
-                        return; // Skip this item if it doesn't match the filter
-                    }
+            const items = data.filter(item => item.show && matchesHardFilter(item, filterObject));
+
+            const start = () => {
+                const container = document.querySelector('.gallery.art>.body');
+                if (!container) {
+                    console.error('buildCollage: no .gallery.art>.body container found');
+                    return;
                 }
-                container.innerHTML += collageItem(item);
-            });
-            // Apply justified layout after images are added
-            justifyGallery(container);
+                // Wired once, then re-used by every re-render the filter bar drives.
+                initLightbox(container);
 
-            // Re-layout once the scrollbar has had a chance to appear
-            // (scrollbar narrows the container after the first layout pass)
-            setTimeout(() => justifyGallery(container), 0);
+                if (options.filters && typeof initGalleryFilters === 'function') {
+                    initGalleryFilters(Object.assign({}, options.filters, {
+                        items: items,
+                        onChange: results => renderCollage(container, results)
+                    }));
+                } else {
+                    renderCollage(container, items);
+                }
+            };
 
-            // Re-layout whenever the container changes width (scrollbar, resize, etc.)
-            setupResizeObserver(container);
-
-            // Allow clicking a thumbnail to view the full-resolution image
-            initLightbox(container);
+            // The call site is an inline <script> that can run before the rest
+            // of the section has been parsed.
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', start, { once: true });
+            } else {
+                start();
+            }
         })
         .catch(error => console.error('Error loading JSON:', error));
+}
+
+// Fixed, page-level filter. Arrays (tags) must contain every requested value;
+// everything else is an exact match.
+function matchesHardFilter(item, filterObject) {
+    if (!filterObject) return true;
+    return Object.keys(filterObject).every(key => {
+        const wanted = filterObject[key];
+        if (Array.isArray(wanted)) {
+            return Array.isArray(item[key]) && wanted.every(value => item[key].includes(value));
+        }
+        return item[key] === wanted;
+    });
+}
+
+// Paints a set of items into the gallery container. Safe to call repeatedly —
+// the filter bar re-invokes it on every state change.
+function renderCollage(container, items) {
+    galleryRenderToken++;
+    container.innerHTML = items.map(collageItem).join('');
+
+    if (!items.length) {
+        container.innerHTML = '<p class="gallery-empty">No artwork matches those filters.</p>';
+        container.style.opacity = '1';
+        return;
+    }
+
+    // Apply justified layout after images are added
+    justifyGallery(container);
+
+    // Re-layout once the scrollbar has had a chance to appear
+    // (scrollbar narrows the container after the first layout pass)
+    setTimeout(() => justifyGallery(container), 0);
+
+    // Re-layout whenever the container changes width (scrollbar, resize, etc.)
+    setupResizeObserver(container);
 }
 
 // Watch the container for width changes (window resize AND scrollbar appearing)
@@ -63,8 +107,15 @@ function setupResizeObserver(container) {
     window.galleryResizeObserver.observe(container);
 }
 
+// Bumped by every render. A justify pass waits on image decoding, so a pass
+// started before a filter change can resolve after the new items are already
+// in the DOM — this lets the stale pass drop out instead of painting the old
+// layout over the new content.
+let galleryRenderToken = 0;
+
 // Calculate justified layout with dynamic row heights
 function justifyGallery(container) {
+    const token = galleryRenderToken;
     const items = Array.from(container.querySelectorAll('.gallery-item'));
 
     // Load all images first
@@ -97,6 +148,7 @@ function justifyGallery(container) {
     });
 
     Promise.all(imagePromises).then(loadedItems => {
+        if (token !== galleryRenderToken) return; // superseded by a newer render
         layoutJustifiedGallery(container, loadedItems, GALLERY_CONFIG.targetRowHeight, GALLERY_CONFIG.gap);
     });
 }
