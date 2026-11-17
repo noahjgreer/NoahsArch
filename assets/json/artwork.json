@@ -258,7 +258,7 @@
         "total_time": "30"
     },
     {
-        "show": true,
+        "show": false,
         "title": "Blåhaj",
         "artist": "FinniTheFox",
         "date": "03-01-2026",
@@ -278,7 +278,7 @@
         "total_time": "104"
     },
     {
-        "show": true,
+        "show": false,
         "title": "Backside Practice",
         "artist": "FinniTheFox",
         "date": "02-26-2026",
